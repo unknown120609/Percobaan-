@@ -430,5 +430,13 @@
       gallerySlides[galleryIndex].classList.add('opacity-100');
     }, 5000);
   </script>
+  <script>
+  // Fungsi dipanggil saat tombol "Buka Undangan" diklik
+  function openInvitation() {
+    document.getElementById('acara').scrollIntoView({ behavior: 'smooth' });
+    const music = document.getElementById('bg-music');
+    music.play().catch(err => console.log("Musik tidak autoplay:", err));
+  }
+  </script>
  </body>
      </html>
