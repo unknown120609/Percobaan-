@@ -3,311 +3,316 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>
-   Undangan Pernikahan Ekowong Design
+   Undangan Pernikahan Bayu &amp; Pasangan
   </title>
   <script src="https://cdn.tailwindcss.com">
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;family=Montserrat:wght@400;600&amp;display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet"/>
   <style>
    body {
       font-family: 'Montserrat', sans-serif;
-      background-color: #fef6f0;
-      color: #4a4a4a;
+      overflow-x: hidden;
     }
-    h1, h2, h3 {
+    .font-script {
       font-family: 'Great Vibes', cursive;
     }
-    /* Smooth fade-in animation */
-    .fade-in {
-      animation: fadeIn 1.2s ease forwards;
-      opacity: 0;
-    }
-    .fade-in.delay-1 {
-      animation-delay: 0.3s;
-    }
-    .fade-in.delay-2 {
-      animation-delay: 0.6s;
-    }
-    .fade-in.delay-3 {
-      animation-delay: 0.9s;
-    }
-    .fade-in.delay-4 {
-      animation-delay: 1.2s;
-    }
-    @keyframes fadeIn {
-      to {
+    /* Animations */
+    @keyframes zoomInOut {
+      0%, 100% {
+        transform: scale(1);
         opacity: 1;
       }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+      }
     }
-    /* Floating flower animation */
-    @keyframes floatUpDown {
-      0%, 100% {
+    .zoom-anim {
+      animation: zoomInOut 8s ease-in-out infinite;
+    }
+    /* Slide up animation for invitation content */
+    @keyframes slideUpFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
         transform: translateY(0);
       }
-      50% {
-        transform: translateY(-10px);
-      }
     }
-    .float-flower {
-      animation: floatUpDown 4s ease-in-out infinite;
+    .slide-up-fade-in {
+      animation: slideUpFadeIn 1s ease forwards;
     }
-    /* Scroll snap for sections */
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 4rem;
+    /* Parallax background effect */
+    .parallax-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      transition: opacity 1s ease;
     }
   </style>
  </head>
- <body class="relative overflow-x-hidden">
-  <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center px-6 text-center bg-gradient-to-b from-pink-50 to-pink-100 relative overflow-hidden" id="hero">
-   <img alt="Ornamen bunga berwarna pink dengan detail halus, melayang di sudut kiri atas" class="absolute top-4 left-4 w-20 h-20 float-flower opacity-70" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/6cb8749f-1bd2-4e92-35c7-e21076074acb.jpg" width="120"/>
-   <img alt="Ornamen bunga berwarna pink dengan detail halus, melayang di sudut kanan bawah" class="absolute bottom-4 right-4 w-20 h-20 float-flower opacity-70" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/2d9ff78a-48c8-4848-2bab-6709772f741a.jpg" width="120"/>
-   <h1 class="text-5xl md:text-7xl font-great-vibes text-pink-600 fade-in delay-1">
-    Ekowong &amp; Design
-   </h1>
-   <p class="mt-2 text-lg md:text-xl text-pink-700 font-semibold fade-in delay-2">
-    Mengundang Anda untuk hadir dalam acara pernikahan kami
-   </p>
-   <div class="mt-8 space-x-4 fade-in delay-3">
-    <a class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition" href="#details">
-     Lihat Detail
-    </a>
-    <a class="inline-block border-2 border-pink-600 hover:bg-pink-600 hover:text-white text-pink-600 font-semibold py-3 px-8 rounded-full shadow-lg transition" href="#rsvp">
-     Konfirmasi Kehadiran
-    </a>
+ <body class="bg-gray-50 relative">
+  <!-- Initial Splash Screen -->
+  <div class="fixed inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center text-center px-6" id="splash-screen">
+   <div class="max-w-md text-white">
+    <h1 class="text-4xl md:text-5xl font-script mb-6">
+     YTH. kpda Tamu Undangan
+    </h1>
+    <p class="mb-10 text-lg md:text-xl font-semibold tracking-wide">
+     Dengan hormat kami mengundang Anda untuk hadir di acara pernikahan kami.
+    </p>
+    <button aria-label="Buka Undangan" class="bg-pink-600 hover:bg-pink-700 transition text-white font-semibold py-3 px-8 rounded-full shadow-lg text-xl md:text-2xl focus:outline-none focus:ring-4 focus:ring-pink-400" id="btn-open-invitation">
+     Buka Undangan
+    </button>
    </div>
-  </section>
-  <!-- Couple Section -->
-  <section class="py-16 px-6 bg-white max-w-5xl mx-auto text-center relative" id="couple">
-   <h2 class="text-4xl md:text-5xl font-great-vibes text-pink-600 mb-8 fade-in delay-1">
-    Kami yang Berbahagia
-   </h2>
-   <div class="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24 fade-in delay-2">
-    <div class="max-w-xs">
-     <img alt="Foto pengantin pria mengenakan jas tradisional Jawa berwarna coklat dengan latar belakang bunga dan kain batik" class="rounded-3xl shadow-lg mx-auto mb-4" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/f107ce12-414e-4ca2-2025-faaa879d13ad.jpg" width="300"/>
-     <h3 class="text-2xl font-semibold text-pink-700">
-      Bapak Ekowong
-     </h3>
-     <p class="text-pink-500 italic mt-1">
-      Putra dari Bapak Suryo &amp; Ibu Ratna
+  </div>
+  <!-- Background slideshow container -->
+  <div class="fixed inset-0 -z-10 overflow-hidden" id="background-slideshow">
+   <img alt="Foto latar pernikahan romantis di taman hijau dengan bunga dan dekorasi elegan" class="parallax-bg zoom-anim opacity-100" height="1080" id="bg-image-1" src="https://storage.googleapis.com/a1aa/image/86a97033-850b-4f44-9098-a3ddf8b83e8e.jpg" width="1920"/>
+   <img alt="Foto pasangan bahagia sedang berjalan di pantai saat senja dengan langit jingga" class="parallax-bg zoom-anim opacity-0" height="1080" id="bg-image-2" src="https://storage.googleapis.com/a1aa/image/6189ca67-a8d0-4af2-39f4-953765a7f328.jpg" width="1920"/>
+   <img alt="Foto dekorasi pernikahan mewah di ballroom dengan lampu gantung kristal dan bunga putih" class="parallax-bg zoom-anim opacity-0" height="1080" id="bg-image-3" src="https://storage.googleapis.com/a1aa/image/9bb23ece-ff4c-4b47-0fdb-18c9dec0d262.jpg" width="1920"/>
+  </div>
+  <!-- Main Invitation Content -->
+  <main class="min-h-screen flex flex-col justify-center items-center px-6 pt-24 pb-16 max-w-4xl mx-auto opacity-0 translate-y-12" id="invitation-content">
+   <!-- Section 1 -->
+   <section class="w-full relative flex flex-col md:flex-row items-center bg-white bg-opacity-80 rounded-xl shadow-lg overflow-hidden mb-16" id="section-1">
+    <img alt="Foto pasangan bahagia sedang berpelukan di taman hijau dengan bunga dan sinar matahari lembut" class="w-full md:w-1/2 object-cover" height="800" src="https://storage.googleapis.com/a1aa/image/d6ec035c-c3aa-4b02-a74f-6c8bda5ed781.jpg" width="600"/>
+    <div class="p-8 md:w-1/2 text-center md:text-left">
+     <h2 class="font-script text-5xl text-pink-600 mb-4">
+      Bayu &amp; Pasangan
+     </h2>
+     <p class="text-gray-700 text-lg mb-4">
+      Dengan penuh suka cita kami mengundang Anda untuk hadir dalam acara pernikahan kami.
      </p>
-    </div>
-    <div class="text-6xl text-pink-300 font-great-vibes select-none">
-     ❤
-    </div>
-    <div class="max-w-xs">
-     <img alt="Foto pengantin wanita mengenakan kebaya tradisional berwarna merah muda dengan latar belakang bunga dan kain batik" class="rounded-3xl shadow-lg mx-auto mb-4" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/5ade1ff2-b239-48a7-64ab-d9b902fd3297.jpg" width="300"/>
-     <h3 class="text-2xl font-semibold text-pink-700">
-      Ibu Design
-     </h3>
-     <p class="text-pink-500 italic mt-1">
-      Putri dari Bapak Joko &amp; Ibu Sari
-     </p>
-    </div>
-   </div>
-  </section>
-  <!-- Event Details Section -->
-  <section class="bg-pink-50 py-16 px-6 max-w-5xl mx-auto text-center relative" id="details">
-   <h2 class="text-4xl md:text-5xl font-great-vibes text-pink-600 mb-12 fade-in delay-1">
-    Detail Acara
-   </h2>
-   <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-pink-700 fade-in delay-2">
-    <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300">
-     <i class="fas fa-calendar-alt text-pink-500 text-5xl mb-4">
-     </i>
-     <h3 class="text-2xl font-semibold mb-2">
-      Tanggal
-     </h3>
-     <p class="text-lg">
+     <p class="text-gray-600 italic">
       Sabtu, 20 Juli 2024
      </p>
-    </div>
-    <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300">
-     <i class="fas fa-clock text-pink-500 text-5xl mb-4">
-     </i>
-     <h3 class="text-2xl font-semibold mb-2">
-      Waktu
-     </h3>
-     <p class="text-lg">
-      10:00 WIB - Selesai
+     <p class="text-gray-600 italic">
+      Pukul 10.00 WIB
+     </p>
+     <p class="text-gray-600 italic">
+      Gedung Serbaguna Taman Melati
      </p>
     </div>
-    <div class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center hover:scale-105 transition-transform duration-300">
-     <i class="fas fa-map-marker-alt text-pink-500 text-5xl mb-4">
-     </i>
-     <h3 class="text-2xl font-semibold mb-2">
-      Lokasi
-     </h3>
-     <p class="text-lg max-w-xs">
-      Gedung Serbaguna Melati, Jl. Melati No. 45, Jakarta Selatan
+   </section>
+   <!-- Section 2 -->
+   <section class="w-full relative flex flex-col md:flex-row-reverse items-center bg-white bg-opacity-80 rounded-xl shadow-lg overflow-hidden mb-16" id="section-2">
+    <img alt="Foto dekorasi pernikahan mewah di ballroom dengan lampu gantung kristal dan bunga putih" class="w-full md:w-1/2 object-cover" height="800" src="https://storage.googleapis.com/a1aa/image/9bb23ece-ff4c-4b47-0fdb-18c9dec0d262.jpg" width="600"/>
+    <div class="p-8 md:w-1/2 text-center md:text-left">
+     <h2 class="font-script text-4xl text-pink-600 mb-4">
+      Acara &amp; Lokasi
+     </h2>
+     <p class="text-gray-700 text-lg mb-4">
+      Lokasi acara pernikahan kami yang indah dan nyaman.
+     </p>
+     <ul class="text-gray-600 list-disc list-inside mb-4">
+      <li>
+       Akad Nikah: 20 Juli 2024, pukul 10.00 WIB
+      </li>
+      <li>
+       Resepsi: 20 Juli 2024, pukul 12.00 WIB
+      </li>
+      <li>
+       Gedung Serbaguna Taman Melati, Jalan Melati No. 45, Jakarta
+      </li>
+     </ul>
+     <p class="text-gray-600 italic">
+      Mohon hadir tepat waktu.
      </p>
     </div>
-   </div>
-   <div class="mt-12 fade-in delay-3">
-    <iframe allowfullscreen="" class="w-full h-64 md:h-96 rounded-3xl shadow-lg" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1234567890123!2d106.8271533153167!3d-6.175110995535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e0a1b2c3d5%3A0x123456789abcdef0!2sGedung%20Serbaguna%20Melati!5e0!3m2!1sid!2sid!4v1687000000000!5m2!1sid!2sid" title="Peta lokasi Gedung Serbaguna Melati">
-    </iframe>
-   </div>
-  </section>
-  <!-- Gallery Section -->
-  <section class="py-16 px-6 max-w-6xl mx-auto bg-white text-center" id="gallery">
-   <h2 class="text-4xl md:text-5xl font-great-vibes text-pink-600 mb-12 fade-in delay-1">
-    Galeri Kenangan
-   </h2>
-   <div aria-label="Galeri foto kenangan pengantin" class="grid grid-cols-2 md:grid-cols-4 gap-6 fade-in delay-2">
-    <img alt="Foto kenangan pengantin pria dan wanita sedang tersenyum di taman bunga dengan latar belakang pepohonan hijau" class="rounded-3xl shadow-lg object-cover w-full h-48 md:h-56" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/3b48b438-bec7-48f3-19ab-c86c9ff5303a.jpg" width="400"/>
-    <img alt="Foto pengantin pria dan wanita sedang berjalan beriringan di jalan setapak dengan latar belakang sinar matahari sore" class="rounded-3xl shadow-lg object-cover w-full h-48 md:h-56" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/a4a4e497-af87-4f5d-d266-089389e34fb0.jpg" width="400"/>
-    <img alt="Foto pengantin wanita sedang tertawa sambil memegang buket bunga mawar merah" class="rounded-3xl shadow-lg object-cover w-full h-48 md:h-56" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/fa5cec01-2e7e-4dc3-6fe9-e8625c5226b3.jpg" width="400"/>
-    <img alt="Foto pengantin pria sedang memegang tangan pengantin wanita dengan latar belakang air terjun kecil" class="rounded-3xl shadow-lg object-cover w-full h-48 md:h-56" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/40fcd32e-b85e-4f26-da0d-62831e500207.jpg" width="400"/>
-    <img alt="Foto pengantin pria dan wanita duduk di bangku taman dengan latar belakang bunga warna-warni" class="rounded-3xl shadow-lg object-cover w-full h-48 md:h-56" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/f3f0a7c5-c466-400e-14f1-9d80b85b1332.jpg" width="400"/>
-    <img alt="Foto pengantin pria dan wanita berpelukan dengan latar belakang langit biru cerah" class="rounded-3xl shadow-lg object-cover w-full h-48 md:h-56" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/6b305d73-8012-4fac-3961-2d26a348c604.jpg" width="400"/>
-    <img alt="Foto pengantin wanita memegang payung putih di tengah hujan bunga sakura" class="rounded-3xl shadow-lg object-cover w-full h-48 md:h-56" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/113010a9-30a5-4324-6d49-4d1784bf13be.jpg" width="400"/>
-    <img alt="Foto pengantin pria dan wanita berdiri di depan pintu kayu tua dengan senyum bahagia" class="rounded-3xl shadow-lg object-cover w-full h-48 md:h-56" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/35424e5d-b1fc-44b1-b523-a67deb7b6b07.jpg" width="400"/>
-   </div>
-  </section>
-  <!-- Countdown Section -->
-  <section class="bg-pink-600 text-white py-16 px-6 text-center relative overflow-hidden" id="countdown">
-   <h2 class="text-4xl md:text-5xl font-great-vibes mb-8 fade-in delay-1">
-    Hitung Mundur Menuju Hari Bahagia
-   </h2>
-   <div aria-label="Hitung mundur hari, jam, menit, dan detik menuju acara pernikahan" class="flex justify-center gap-8 text-center text-3xl md:text-5xl font-semibold fade-in delay-2" id="countdown-timer">
-    <div>
-     <div class="text-6xl font-extrabold" id="days">
-      00
-     </div>
-     <div class="text-sm uppercase tracking-widest">
-      Hari
+   </section>
+   <!-- Section 3 -->
+   <section class="w-full relative flex flex-col md:flex-row items-center bg-white bg-opacity-80 rounded-xl shadow-lg overflow-hidden mb-16" id="section-3">
+    <img alt="Foto pasangan sedang berjalan di pantai saat senja dengan langit jingga dan ombak lembut" class="w-full md:w-1/2 object-cover" height="800" src="https://storage.googleapis.com/a1aa/image/0070a4be-639b-41be-acb7-c645a63bbd25.jpg" width="600"/>
+    <div class="p-8 md:w-1/2 text-center md:text-left">
+     <h2 class="font-script text-4xl text-pink-600 mb-4">
+      Kirim Hadiah
+     </h2>
+     <p class="text-gray-700 text-lg mb-4">
+      Jika berkenan, Anda dapat mengirimkan hadiah melalui rekening DANA berikut:
+     </p>
+     <div class="bg-pink-100 border border-pink-300 rounded-lg p-4 text-pink-700 font-semibold text-xl flex items-center justify-center space-x-4">
+      <i class="fas fa-wallet fa-lg">
+      </i>
+      <span>
+       DANA 083862596697 atas nama Bayu Handika
+      </span>
      </div>
     </div>
-    <div>
-     <div class="text-6xl font-extrabold" id="hours">
-      00
-     </div>
-     <div class="text-sm uppercase tracking-widest">
-      Jam
-     </div>
-    </div>
-    <div>
-     <div class="text-6xl font-extrabold" id="minutes">
-      00
-     </div>
-     <div class="text-sm uppercase tracking-widest">
-      Menit
-     </div>
-    </div>
-    <div>
-     <div class="text-6xl font-extrabold" id="seconds">
-      00
-     </div>
-     <div class="text-sm uppercase tracking-widest">
-      Detik
-     </div>
-    </div>
-   </div>
-  </section>
-  <!-- RSVP Section -->
-  <section class="py-16 px-6 max-w-3xl mx-auto bg-white rounded-3xl shadow-lg mt-16 mb-24" id="rsvp">
-   <h2 class="text-4xl md:text-5xl font-great-vibes text-pink-600 mb-8 text-center fade-in delay-1">
-    Konfirmasi Kehadiran
-   </h2>
-   <form aria-label="Formulir konfirmasi kehadiran undangan pernikahan" class="space-y-6 fade-in delay-2" id="rsvp-form">
-    <div>
-     <label class="block text-pink-700 font-semibold mb-2" for="name">
-      Nama Lengkap
-     </label>
-     <input class="w-full border border-pink-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-pink-400" id="name" name="name" placeholder="Masukkan nama lengkap Anda" required="" type="text"/>
-    </div>
-    <div>
-     <label class="block text-pink-700 font-semibold mb-2" for="attendance">
-      Apakah Anda akan hadir?
-     </label>
-     <select class="w-full border border-pink-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-pink-400" id="attendance" name="attendance" required="">
-      <option disabled="" selected="" value="">
-       Pilih jawaban
-      </option>
-      <option value="Hadir">
-       Hadir
-      </option>
-      <option value="Tidak Hadir">
-       Tidak Hadir
-      </option>
-     </select>
-    </div>
-    <div>
-     <label class="block text-pink-700 font-semibold mb-2" for="message">
-      Pesan / Doa untuk kami (opsional)
-     </label>
-     <textarea class="w-full border border-pink-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-pink-400 resize-none" id="message" name="message" placeholder="Tulis pesan atau doa Anda" rows="4"></textarea>
-    </div>
-    <button class="w-full bg-pink-600 hover:bg-pink-700 text-white font-semibold py-4 rounded-full shadow-lg transition" type="submit">
-     Kirim Konfirmasi
+   </section>
+   <!-- Confirmation Button -->
+   <section class="w-full text-center">
+    <button aria-label="Konfirmasi Kehadiran" class="bg-pink-600 hover:bg-pink-700 transition text-white font-semibold py-3 px-8 rounded-full shadow-lg text-xl md:text-2xl focus:outline-none focus:ring-4 focus:ring-pink-400" id="btn-confirm-attendance">
+     Konfirmasi Kehadiran
     </button>
-   </form>
-   <p class="mt-6 text-center text-green-600 font-semibold hidden" id="rsvp-success" role="alert">
-    Terima kasih atas konfirmasi Anda!
-   </p>
-  </section>
-  <!-- Footer -->
-  <footer class="bg-pink-100 py-8 text-center text-pink-700 font-semibold">
-   © 2024 Ekowong &amp; Design. Semua hak cipta dilindungi.
-  </footer>
+   </section>
+  </main>
+  <!-- Modal for Confirmation -->
+  <div aria-hidden="true" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300" id="modal-confirm">
+   <div aria-labelledby="modal-title" aria-modal="true" class="bg-white rounded-xl max-w-md w-full p-6 relative shadow-lg" role="dialog">
+    <button aria-label="Tutup Modal" class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 focus:outline-none" id="modal-close">
+     <i class="fas fa-times fa-lg">
+     </i>
+    </button>
+    <h3 class="text-2xl font-semibold mb-4 text-pink-600 font-script" id="modal-title">
+     Konfirmasi Kehadiran
+    </h3>
+    <form class="space-y-4" id="confirmation-form">
+     <div>
+      <label class="block text-gray-700 font-semibold mb-1" for="name">
+       Nama Lengkap
+      </label>
+      <input class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400" id="name" name="name" placeholder="Masukkan nama lengkap Anda" required="" type="text"/>
+     </div>
+     <div>
+      <label class="block text-gray-700 font-semibold mb-1" for="attendance">
+       Kehadiran
+      </label>
+      <select class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400" id="attendance" name="attendance" required="">
+       <option disabled="" selected="" value="">
+        Pilih kehadiran
+       </option>
+       <option value="Hadir">
+        Hadir
+       </option>
+       <option value="Tidak Hadir">
+        Tidak Hadir
+       </option>
+      </select>
+     </div>
+     <div>
+      <label class="block text-gray-700 font-semibold mb-1" for="message">
+       Pesan (opsional)
+      </label>
+      <textarea class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400" id="message" name="message" placeholder="Tulis pesan atau doa untuk kami" rows="3"></textarea>
+     </div>
+     <button class="bg-pink-600 hover:bg-pink-700 transition text-white font-semibold py-3 px-6 rounded-full shadow-lg w-full" type="submit">
+      Kirim Konfirmasi
+     </button>
+    </form>
+    <p class="hidden mt-4 text-green-600 font-semibold text-center" id="form-success">
+     Terima kasih atas konfirmasi Anda!
+    </p>
+   </div>
+  </div>
   <script>
-   // Countdown timer script
-    const countdownDate = new Date('July 20, 2024 10:00:00').getTime();
+   // Background slideshow logic
+    const bgImages = [
+      document.getElementById('bg-image-1'),
+      document.getElementById('bg-image-2'),
+      document.getElementById('bg-image-3'),
+    ];
+    let currentBgIndex = 0;
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = countdownDate - now;
+    function changeBackground() {
+      bgImages.forEach((img, i) => {
+        img.style.opacity = i === currentBgIndex ? '1' : '0';
+      });
+      currentBgIndex = (currentBgIndex + 1) % bgImages.length;
+    }
+    setInterval(changeBackground, 8000);
 
-      if (distance < 0) {
-        document.getElementById('countdown-timer').innerHTML =
-          '<div class="text-3xl md:text-5xl font-semibold">Acara telah berlangsung</div>';
-        clearInterval(countdownInterval);
-        return;
+    // Splash screen open button
+    const splashScreen = document.getElementById('splash-screen');
+    const btnOpenInvitation = document.getElementById('btn-open-invitation');
+    const invitationContent = document.getElementById('invitation-content');
+
+    btnOpenInvitation.addEventListener('click', () => {
+      // Animate invitation content up and fade in
+      invitationContent.style.opacity = '1';
+      invitationContent.style.transform = 'translateY(0)';
+      invitationContent.classList.add('slide-up-fade-in');
+      // Hide splash screen with fade out
+      splashScreen.style.transition = 'opacity 0.8s ease';
+      splashScreen.style.opacity = '0';
+      setTimeout(() => {
+        splashScreen.style.display = 'none';
+      }, 800);
+    });
+
+    // Modal confirmation logic
+    const btnConfirmAttendance = document.getElementById('btn-confirm-attendance');
+    const modalConfirm = document.getElementById('modal-confirm');
+    const modalClose = document.getElementById('modal-close');
+    const confirmationForm = document.getElementById('confirmation-form');
+    const formSuccess = document.getElementById('form-success');
+
+    btnConfirmAttendance.addEventListener('click', () => {
+      modalConfirm.style.opacity = '1';
+      modalConfirm.style.pointerEvents = 'auto';
+      modalConfirm.setAttribute('aria-hidden', 'false');
+    });
+
+    modalClose.addEventListener('click', () => {
+      modalConfirm.style.opacity = '0';
+      modalConfirm.style.pointerEvents = 'none';
+      modalConfirm.setAttribute('aria-hidden', 'true');
+      formSuccess.classList.add('hidden');
+      confirmationForm.classList.remove('hidden');
+      confirmationForm.reset();
+    });
+
+    modalConfirm.addEventListener('click', (e) => {
+      if (e.target === modalConfirm) {
+        modalClose.click();
       }
+    });
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    confirmationForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Simulate form submission
+      confirmationForm.classList.add('hidden');
+      formSuccess.classList.remove('hidden');
+    });
 
-      document.getElementById('days').textContent = days.toString().padStart(2, '0');
-      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    // Parallax scroll effect for sections background images
+    // We'll fade in/out the background images depending on scroll position
+    const sections = [
+      {
+        el: document.getElementById('section-1'),
+        bg: bgImages[0],
+      },
+      {
+        el: document.getElementById('section-2'),
+        bg: bgImages[2],
+      },
+      {
+        el: document.getElementById('section-3'),
+        bg: bgImages[1],
+      },
+    ];
+
+    function onScroll() {
+      const scrollY = window.scrollY;
+      const vh = window.innerHeight;
+
+      sections.forEach(({ el, bg }) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= vh / 2 && rect.bottom >= vh / 2) {
+          // Section is in the middle of viewport
+          bg.style.opacity = '1';
+        } else {
+          bg.style.opacity = '0';
+        }
+      });
     }
 
-    const countdownInterval = setInterval(updateCountdown, 1000);
-    updateCountdown();
+    window.addEventListener('scroll', onScroll);
 
-    // RSVP form submission
-    const rsvpForm = document.getElementById('rsvp-form');
-    const rsvpSuccess = document.getElementById('rsvp-success');
-
-    rsvpForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      // Simple form validation (already required fields)
-      const name = rsvpForm.name.value.trim();
-      const attendance = rsvpForm.attendance.value;
-
-      if (!name || !attendance) {
-        alert('Mohon lengkapi nama dan pilihan kehadiran.');
-        return;
-      }
-
-      // Simulate sending data (no backend)
-      rsvpForm.reset();
-      rsvpSuccess.classList.remove('hidden');
-
-      setTimeout(() => {
-        rsvpSuccess.classList.add('hidden');
-      }, 5000);
+    // Initialize background opacity on load
+    window.addEventListener('load', () => {
+      // Hide slideshow automatic cycling on scroll, because parallax overrides
+      clearInterval(changeBackground);
+      onScroll();
     });
   </script>
  </body>
-  </html>
-     
+ </html>
+
