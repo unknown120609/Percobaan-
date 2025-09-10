@@ -1,129 +1,512 @@
-<!DOCTYPE html>
 <html class="scroll-smooth" lang="id">
-<head>
+ <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>Undangan Pernikahan Bayu & Pasangan</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>
+   Undangan Pernikahan Anissa Maryam &amp; Hamzah Yusuf
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;family=Open+Sans&amp;display=swap" rel="stylesheet"/>
   <style>
-    body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
-    .font-script { font-family: 'Great Vibes', cursive; }
-    /* Background zoom */
-    .zoom-anim { animation: zoomInOut 20s ease-in-out infinite; }
-    @keyframes zoomInOut {
-      0%,100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.1); opacity: .9; }
+   body {
+      font-family: 'Open Sans', sans-serif;
     }
-    /* Gallery Grid */
-    .gallery-grid img { transition: transform .5s; }
-    .gallery-grid img:hover { transform: scale(1.1); }
-    /* Slider */
-    .slider { position: relative; overflow: hidden; }
-    .slides { display: flex; transition: transform 0.6s ease; }
-    .slides img { width: 100%; flex-shrink: 0; }
-    .slider-btn {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(0,0,0,.5); color:#fff; border:none;
-      padding:10px; cursor:pointer; border-radius:50%;
-    }
-    .prev { left: 10px; }
-    .next { right: 10px; }
-    /* Butterfly */
-    .butterfly {
-      position: fixed;
-      width: 40px; height: 40px;
-      background: url('https://cdn-icons-png.flaticon.com/512/616/616408.png') no-repeat center/contain;
-      animation: fly 25s linear infinite;
-      opacity: 0.8; z-index: 50;
-    }
-    @keyframes fly {
-      0% { top: 100%; left: -10%; transform: rotate(0deg); }
-      50% { top: 20%; left: 50%; transform: rotate(45deg); }
-      100% { top: -10%; left: 110%; transform: rotate(90deg); }
+    h1, h2, h3 {
+      font-family: 'Great Vibes', cursive;
     }
   </style>
-</head>
-<body class="bg-gray-50 relative">
-
-  <!-- Musik autoplay -->
-  <audio id="bgMusic" autoplay loop muted>
-    <source src="musik.mp3" type="audio/mpeg">
-  </audio>
-
-  <!-- Background slideshow -->
-  <div class="fixed inset-0 -z-10 overflow-hidden">
-    <img src="https://storage.googleapis.com/a1aa/image/86a97033-850b-4f44-9098-a3ddf8b83e8e.jpg" class="w-full h-full object-cover zoom-anim"/>
-  </div>
-
-  <!-- Butterfly Effect -->
-  <div class="butterfly"></div>
-
-  <!-- Main Invitation -->
-  <main class="min-h-screen flex flex-col justify-center items-center px-6 pt-24 pb-16 max-w-4xl mx-auto">
-    
-    <!-- Section 1 -->
-    <section class="w-full relative flex flex-col md:flex-row items-center bg-white bg-opacity-80 rounded-xl shadow-lg overflow-hidden mb-16">
-      <img src="https://storage.googleapis.com/a1aa/image/d6ec035c-c3aa-4b02-a74f-6c8bda5ed781.jpg"
-        class="w-full md:w-1/2 object-cover"/>
-      <div class="p-8 md:w-1/2 text-center md:text-left">
-        <h2 class="font-script text-5xl text-pink-600 mb-4">Bayu & Pasangan</h2>
-        <p class="text-gray-700 text-lg mb-4">Dengan penuh suka cita kami mengundang Anda hadir dalam acara pernikahan kami.</p>
-        <p class="text-gray-600 italic">Sabtu, 20 Juli 2024</p>
-        <p class="text-gray-600 italic">Pukul 10.00 WIB</p>
-        <p class="text-gray-600 italic">Gedung Serbaguna Taman Melati</p>
-      </div>
-    </section>
-
-    <!-- Section 2 -->
-    <section class="w-full bg-white bg-opacity-80 rounded-xl shadow-lg p-6 mb-16">
-      <h2 class="font-script text-4xl text-pink-600 text-center mb-4">Galeri Kenangan</h2>
-      
-      <!-- Slider -->
-      <div class="slider mb-8">
-        <div class="slides" id="slides">
-          <img src="https://picsum.photos/800/400?1"/>
-          <img src="https://picsum.photos/800/400?2"/>
-          <img src="https://picsum.photos/800/400?3"/>
-          <img src="https://picsum.photos/800/400?4"/>
+ </head>
+ <body class="bg-gradient-to-b from-pink-50 via-white to-pink-50 min-h-screen flex flex-col">
+  <header class="bg-white shadow-md sticky top-0 z-30">
+   <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-3xl text-pink-600 font-bold tracking-wide">
+     Anissa &amp; Hamzah
+    </h1>
+    <ul class="hidden md:flex space-x-8 text-pink-700 font-semibold">
+     <li>
+      <a class="hover:text-pink-900 transition" href="#salam">
+       Salam
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-pink-900 transition" href="#countdown">
+       Countdown
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-pink-900 transition" href="#jadwal">
+       Jadwal
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-pink-900 transition" href="#our-story">
+       Our Story
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-pink-900 transition" href="#galeri">
+       Galeri
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-pink-900 transition" href="#rsvp">
+       RSVP
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-pink-900 transition" href="#hadiah">
+       Hadiah
+      </a>
+     </li>
+    </ul>
+    <button class="md:hidden text-pink-600 focus:outline-none" id="btnOpenInvitation">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+   </nav>
+   <div class="hidden md:hidden bg-pink-50 border-t border-pink-200" id="mobileMenu">
+    <ul class="flex flex-col space-y-3 p-4 text-pink-700 font-semibold">
+     <li>
+      <a class="block hover:text-pink-900 transition" href="#salam">
+       Salam
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-pink-900 transition" href="#countdown">
+       Countdown
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-pink-900 transition" href="#jadwal">
+       Jadwal
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-pink-900 transition" href="#our-story">
+       Our Story
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-pink-900 transition" href="#galeri">
+       Galeri
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-pink-900 transition" href="#rsvp">
+       RSVP
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-pink-900 transition" href="#hadiah">
+       Hadiah
+      </a>
+     </li>
+    </ul>
+   </div>
+  </header>
+  <main class="flex-grow container mx-auto px-6 py-10 max-w-5xl">
+   <section class="text-center mb-12" id="salam">
+    <h2 class="text-4xl md:text-5xl text-pink-700 font-bold mb-4">
+     Assalamu’alaikum Warahmatullahi Wabarakatuh
+    </h2>
+    <p class="text-lg md:text-xl text-pink-600 max-w-3xl mx-auto">
+     Dengan penuh rasa syukur dan bahagia, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami yang insya Allah akan menjadi awal dari perjalanan suci kami bersama.
+    </p>
+   </section>
+   <section class="bg-pink-100 rounded-xl p-8 mb-12 shadow-lg text-center" id="countdown">
+    <h3 class="text-3xl text-pink-700 font-semibold mb-4">
+     Countdown Menuju Hari Bahagia
+    </h3>
+    <div class="flex justify-center space-x-6 text-pink-800 font-bold text-2xl md:text-4xl" id="countdownTimer">
+     <div>
+      <span class="block text-5xl md:text-7xl" id="days">
+       0
+      </span>
+      Hari
+     </div>
+     <div>
+      <span class="block text-5xl md:text-7xl" id="hours">
+       0
+      </span>
+      Jam
+     </div>
+     <div>
+      <span class="block text-5xl md:text-7xl" id="minutes">
+       0
+      </span>
+      Menit
+     </div>
+     <div>
+      <span class="block text-5xl md:text-7xl" id="seconds">
+       0
+      </span>
+      Detik
+     </div>
+    </div>
+    <button class="mt-8 bg-pink-600 hover:bg-pink-700 text-white font-semibold px-8 py-3 rounded-full shadow-lg transition focus:outline-none focus:ring-4 focus:ring-pink-300" id="btnReveal">
+     Buka Undangan
+    </button>
+   </section>
+   <section class="hidden bg-white rounded-xl p-8 mb-12 shadow-lg" id="jadwal">
+    <h3 class="text-3xl text-pink-700 font-semibold mb-6 text-center">
+     Jadwal Acara
+    </h3>
+    <div class="space-y-8 max-w-3xl mx-auto text-pink-700">
+     <article class="border-l-4 border-pink-600 pl-6">
+      <h4 class="text-2xl font-bold mb-1">
+       Akad Nikah
+      </h4>
+      <p class="text-lg font-semibold">
+       12 Desember 2021, 08:00 WIB
+      </p>
+      <p class="italic">
+       Masjid Agung Bogor
+      </p>
+     </article>
+     <article class="border-l-4 border-pink-600 pl-6">
+      <h4 class="text-2xl font-bold mb-1">
+       Resepsi
+      </h4>
+      <p class="text-lg font-semibold">
+       12 Desember 2024, 10:00 WIB
+      </p>
+      <p class="italic">
+       Jl. Kusuma Bangsa 05, Rawamangun, Depok
+      </p>
+     </article>
+     <article class="border-l-4 border-pink-600 pl-6">
+      <h4 class="text-2xl font-bold mb-1">
+       Ngunduh Mantu
+      </h4>
+      <p class="text-lg font-semibold">
+       15 Desember 2021, 08:00 WIB
+      </p>
+      <p class="italic">
+       Jl. Kusuma Bangsa 05, Rawamangun, Depok
+      </p>
+     </article>
+    </div>
+    <div class="mt-8 max-w-3xl mx-auto text-pink-700 text-center text-lg font-semibold">
+     <p>
+      Dress Code:
+      <span class="italic">
+       Batik
+      </span>
+     </p>
+     <p class="mt-2">
+      Mohon untuk selalu menjaga protokol kesehatan demi kenyamanan bersama.
+     </p>
+    </div>
+   </section>
+   <section class="hidden bg-pink-50 rounded-xl p-8 mb-12 shadow-lg max-w-4xl mx-auto" id="our-story">
+    <h3 class="text-3xl text-pink-700 font-semibold mb-6 text-center">
+     Our Story
+    </h3>
+    <div class="space-y-6 text-pink-800 text-center text-lg md:text-xl">
+     <p>
+      <span class="font-semibold text-pink-600">
+       Kenalan:
+      </span>
+      Dari pertemuan yang sederhana, hati kami mulai terpaut, saling mengenal dan menemukan kenyamanan yang tak terduga.
+     </p>
+     <p>
+      <span class="font-semibold text-pink-600">
+       Tunangan:
+      </span>
+      Dengan doa dan restu, kami melangkah ke tahap yang lebih serius, berjanji untuk saling menjaga dan mencintai selamanya.
+     </p>
+     <p>
+      <span class="font-semibold text-pink-600">
+       Menikah:
+      </span>
+      Kini, kami siap mengikat janji suci, memulai babak baru penuh cinta, harapan, dan kebahagiaan abadi.
+     </p>
+    </div>
+    <div class="mt-8 flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12 text-pink-700 font-semibold text-lg">
+     <div class="text-center">
+      <p class="text-pink-800 text-2xl md:text-3xl mb-1">
+       Pria
+      </p>
+      <p class="italic">
+       “Semoga dia menjadi istri dunia dan akhirat.”
+      </p>
+     </div>
+     <div class="text-center">
+      <p class="text-pink-800 text-2xl md:text-3xl mb-1">
+       Wanita
+      </p>
+      <p class="italic">
+       “Semoga dia menjadi imam yang baik.”
+      </p>
+     </div>
+    </div>
+   </section>
+   <section class="hidden mb-12 max-w-6xl mx-auto" id="galeri">
+    <h3 class="text-3xl text-pink-700 font-semibold mb-8 text-center">
+     Galeri Foto &amp; Video Story
+    </h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
+     <img alt="Foto Anissa Maryam dan Hamzah Yusuf sedang duduk berdua di taman romantis dengan latar bunga dan sinar matahari lembut" class="rounded-lg shadow-md object-cover w-full h-48 md:h-56" height="400" src="https://storage.googleapis.com/a1aa/image/8985b18d-5104-4f3c-27b8-80c10e09587b.jpg" width="600"/>
+     <img alt="Foto Anissa Maryam dan Hamzah Yusuf sedang berpegangan tangan dengan latar belakang pemandangan matahari terbenam yang indah" class="rounded-lg shadow-md object-cover w-full h-48 md:h-56" height="400" src="https://storage.googleapis.com/a1aa/image/10545837-d2bb-4eeb-0145-a29bfe319582.jpg" width="600"/>
+     <img alt="Foto Anissa Maryam dan Hamzah Yusuf berjalan beriringan di tepi pantai dengan ombak lembut dan langit jingga senja" class="rounded-lg shadow-md object-cover w-full h-48 md:h-56" height="400" src="https://storage.googleapis.com/a1aa/image/0f8402cb-78a5-40a3-ac8d-f68f687afb39.jpg" width="600"/>
+     <img alt="Foto keluarga besar Anissa Maryam dan Hamzah Yusuf sedang berkumpul dan tersenyum bahagia di halaman rumah dengan dekorasi pernikahan" class="rounded-lg shadow-md object-cover w-full h-48 md:h-56" height="400" src="https://storage.googleapis.com/a1aa/image/dd48bdec-6e97-41bc-c8ff-8ee279a61352.jpg" width="600"/>
+     <img alt="Foto Anissa Maryam dan Hamzah Yusuf mengenakan pakaian adat tradisional Indonesia dengan latar belakang dekorasi pernikahan yang elegan" class="rounded-lg shadow-md object-cover w-full h-48 md:h-56" height="400" src="https://storage.googleapis.com/a1aa/image/464dbe80-eb28-4f2f-d7f0-db12e7a09731.jpg" width="600"/>
+     <img alt="Foto close-up Anissa Maryam dan Hamzah Yusuf saling tersenyum penuh cinta dengan latar belakang bunga dan lampu hias" class="rounded-lg shadow-md object-cover w-full h-48 md:h-56" height="400" src="https://storage.googleapis.com/a1aa/image/ed4dd63b-4d7c-459c-a198-c1cbb9cff805.jpg" width="600"/>
+    </div>
+    <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg max-w-4xl mx-auto">
+     <iframe allowfullscreen="" class="w-full h-full" src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Video Story Anissa Maryam &amp; Hamzah Yusuf">
+     </iframe>
+    </div>
+   </section>
+   <section class="hidden bg-white rounded-xl p-8 mb-12 shadow-lg max-w-3xl mx-auto" id="rsvp">
+    <h3 class="text-3xl text-pink-700 font-semibold mb-6 text-center">
+     Konfirmasi Kehadiran (RSVP)
+    </h3>
+    <form class="space-y-6 text-pink-700" id="rsvpForm">
+     <div>
+      <label class="block mb-2 font-semibold" for="name">
+       Nama Lengkap
+      </label>
+      <input class="w-full border border-pink-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400" id="name" name="name" placeholder="Nama Anda" required="" type="text"/>
+     </div>
+     <div>
+      <label class="block mb-2 font-semibold" for="message">
+       Pesan untuk Mempelai
+      </label>
+      <textarea class="w-full border border-pink-300 rounded-md px-4 py-2 resize-y focus:outline-none focus:ring-2 focus:ring-pink-400" id="message" name="message" placeholder="Tulis pesan atau doa Anda" rows="3"></textarea>
+     </div>
+     <div>
+      <label class="block mb-2 font-semibold" for="status">
+       Status Kehadiran
+      </label>
+      <select class="w-full border border-pink-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400" id="status" name="status" required="">
+       <option disabled="" selected="" value="">
+        Pilih status
+       </option>
+       <option value="Hadir">
+        Hadir
+       </option>
+       <option value="Tidak Hadir">
+        Tidak Hadir
+       </option>
+      </select>
+     </div>
+     <div>
+      <label class="block mb-2 font-semibold">
+       Pilih Stiker Ucapan
+      </label>
+      <div class="flex flex-wrap gap-4">
+       <label class="cursor-pointer flex flex-col items-center">
+        <input class="hidden" name="sticker" required="" type="radio" value="🎉"/>
+        <div class="text-4xl">
+         🎉
         </div>
-        <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+        <span class="text-sm mt-1">
+         Selamat
+        </span>
+       </label>
+       <label class="cursor-pointer flex flex-col items-center">
+        <input class="hidden" name="sticker" type="radio" value="❤️"/>
+        <div class="text-4xl">
+         ❤️
+        </div>
+        <span class="text-sm mt-1">
+         Cinta
+        </span>
+       </label>
+       <label class="cursor-pointer flex flex-col items-center">
+        <input class="hidden" name="sticker" type="radio" value="🙏"/>
+        <div class="text-4xl">
+         🙏
+        </div>
+        <span class="text-sm mt-1">
+         Doa
+        </span>
+       </label>
+       <label class="cursor-pointer flex flex-col items-center">
+        <input class="hidden" name="sticker" type="radio" value="🌹"/>
+        <div class="text-4xl">
+         🌹
+        </div>
+        <span class="text-sm mt-1">
+         Bunga
+        </span>
+       </label>
       </div>
-
-      <!-- Grid -->
-      <div class="gallery-grid grid grid-cols-2 md:grid-cols-5 gap-4">
-        <img src="https://picsum.photos/200?11" class="rounded-lg shadow"/>
-        <img src="https://picsum.photos/200?12" class="rounded-lg shadow"/>
-        <img src="https://picsum.photos/200?13" class="rounded-lg shadow"/>
-        <img src="https://picsum.photos/200?14" class="rounded-lg shadow"/>
-        <img src="https://picsum.photos/200?15" class="rounded-lg shadow"/>
-        <img src="https://picsum.photos/200?16" class="rounded-lg shadow"/>
-        <img src="https://picsum.photos/200?17" class="rounded-lg shadow"/>
-        <img src="https://picsum.photos/200?18" class="rounded-lg shadow"/>
-        <img src="https://picsum.photos/200?19" class="rounded-lg shadow"/>
-        <img src="https://picsum.photos/200?20" class="rounded-lg shadow"/>
-      </div>
-    </section>
+     </div>
+     <button class="bg-pink-600 hover:bg-pink-700 text-white font-semibold px-6 py-3 rounded-full shadow-md transition focus:outline-none focus:ring-4 focus:ring-pink-300" type="submit">
+      Kirim
+     </button>
+    </form>
+    <div class="mt-6 text-center text-green-600 font-semibold hidden" id="rsvpMessage">
+    </div>
+   </section>
+   <section class="hidden bg-pink-50 rounded-xl p-8 mb-12 shadow-lg max-w-4xl mx-auto" id="hadiah">
+    <h3 class="text-3xl text-pink-700 font-semibold mb-6 text-center">
+     Informasi Hadiah Pernikahan
+    </h3>
+    <div class="space-y-8 text-pink-700 text-lg max-w-3xl mx-auto">
+     <div>
+      <h4 class="font-semibold text-2xl mb-2">
+       Transfer Bank
+      </h4>
+      <ul class="list-disc list-inside space-y-1">
+       <li>
+        <span class="font-semibold">
+         BNI:
+        </span>
+        1234567890 a.n. Anissa Maryam
+       </li>
+       <li>
+        <span class="font-semibold">
+         BRI:
+        </span>
+        0987654321 a.n. Hamzah Yusuf
+       </li>
+       <li>
+        <span class="font-semibold">
+         Mandiri:
+        </span>
+        1122334455 a.n. Anissa &amp; Hamzah
+       </li>
+      </ul>
+     </div>
+     <div>
+      <h4 class="font-semibold text-2xl mb-2">
+       Dompet Digital
+      </h4>
+      <ul class="list-disc list-inside space-y-1">
+       <li>
+        <span class="font-semibold">
+         OVO:
+        </span>
+        081234567890
+       </li>
+       <li>
+        <span class="font-semibold">
+         DANA:
+        </span>
+        089876543210
+       </li>
+       <li>
+        <span class="font-semibold">
+         GoPay:
+        </span>
+        082112233445
+       </li>
+      </ul>
+     </div>
+     <div>
+      <h4 class="font-semibold text-2xl mb-2">
+       Alamat Kado Fisik
+      </h4>
+      <address class="not-italic">
+       Jl. Kusuma Bangsa 05, Rawamangun, Depok, Jawa Barat, Indonesia
+      </address>
+     </div>
+    </div>
+   </section>
   </main>
-
+  <footer class="bg-white border-t border-pink-200 py-6 text-center text-pink-700 font-semibold">
+   <p>
+    Terima kasih atas doa dan kehadiran Bapak/Ibu/Saudara/i. Semoga kebahagiaan selalu menyertai kita semua.
+   </p>
+   <p class="mt-2 text-pink-500 text-lg">
+    Created With
+    <span class="text-red-600">
+     ❤
+    </span>
+    Full Of Love
+   </p>
+  </footer>
   <script>
-    // Autoplay musik (unmute setelah load)
-    window.addEventListener('load', () => {
-      const music = document.getElementById('bgMusic');
-      music.muted = false;
-      music.play().catch(()=>{});
+   // Mobile menu toggle
+    const btnOpenInvitation = document.getElementById('btnOpenInvitation');
+    const mobileMenu = document.getElementById('mobileMenu');
+    btnOpenInvitation.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
     });
 
-    // Slider logic
-    let index = 0;
-    function moveSlide(step){
-      const slides = document.getElementById('slides');
-      const total = slides.children.length;
-      index = (index + step + total) % total;
-      slides.style.transform = `translateX(-${index * 100}%)`;
+    // Countdown timer
+    const countdownSection = document.getElementById('countdown');
+    const jadwalSection = document.getElementById('jadwal');
+    const ourStorySection = document.getElementById('our-story');
+    const galeriSection = document.getElementById('galeri');
+    const rsvpSection = document.getElementById('rsvp');
+    const hadiahSection = document.getElementById('hadiah');
+    const btnReveal = document.getElementById('btnReveal');
+
+    // Target date: Rabu, 31 Desember 2025
+    const targetDate = new Date('December 31, 2025 00:00:00');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        document.getElementById('days').textContent = '0';
+        document.getElementById('hours').textContent = '0';
+        document.getElementById('minutes').textContent = '0';
+        document.getElementById('seconds').textContent = '0';
+        clearInterval(countdownInterval);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
     }
+
+    const countdownInterval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Reveal invitation details on button click
+    btnReveal.addEventListener('click', () => {
+      jadwalSection.classList.remove('hidden');
+      ourStorySection.classList.remove('hidden');
+      galeriSection.classList.remove('hidden');
+      rsvpSection.classList.remove('hidden');
+      hadiahSection.classList.remove('hidden');
+      btnReveal.disabled = true;
+      btnReveal.textContent = 'Undangan Dibuka';
+      btnReveal.classList.replace('bg-pink-600', 'bg-pink-400');
+      btnReveal.classList.remove('hover:bg-pink-700');
+      btnReveal.classList.add('cursor-not-allowed');
+      window.scrollTo({ top: jadwalSection.offsetTop - 80, behavior: 'smooth' });
+    });
+
+    // RSVP form submission
+    const rsvpForm = document.getElementById('rsvpForm');
+    const rsvpMessage = document.getElementById('rsvpMessage');
+
+    rsvpForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(rsvpForm);
+      const name = formData.get('name').trim();
+      const message = formData.get('message').trim();
+      const status = formData.get('status');
+      const sticker = formData.get('sticker');
+
+      if (!name || !status || !sticker) {
+        alert('Mohon lengkapi semua data yang diperlukan.');
+        return;
+      }
+
+      rsvpMessage.textContent = `Terima kasih, ${name}, atas konfirmasi Anda. Kami sangat menantikan kehadiran Anda!`;
+      rsvpMessage.classList.remove('hidden');
+      rsvpForm.reset();
+      rsvpForm.querySelector('input[name="sticker"]').required = true;
+      rsvpForm.scrollIntoView({ behavior: 'smooth' });
+    });
   </script>
-</body>
-</html>
+ </body>
+      </html>
+
