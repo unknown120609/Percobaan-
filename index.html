@@ -19,6 +19,7 @@
     .rsvp input,.rsvp select,.rsvp textarea{width:100%;padding:10px;margin:6px 0;border:0;border-radius:8px}
     .btn{background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;border:0;cursor:pointer}
     footer{font-size:13px;color:var(--muted);text-align:center;padding:20px;background:#000}
+    #music-control{position:fixed;bottom:20px;right:20px;z-index:99;background:var(--accent);border-radius:50%;width:50px;height:50px;display:flex;justify-content:center;align-items:center;cursor:pointer;color:#fff;font-size:20px;box-shadow:0 4px 10px rgba(0,0,0,0.3)}
   </style>
 </head>
 <body>  <!-- Header -->  <section style="--bg:url('https://via.placeholder.com/1200x800?text=Foto+Header')">
@@ -79,7 +80,9 @@
     </div>
   </section>  <footer>
     Terima kasih atas doa dan restunya. — Created by ekowong_Undangan Web
-  </footer>  <script>
+  </footer>  <!-- Musik --><audio id="bg-music" src="musik.mp3" loop></audio>
+
+  <div id="music-control">▶</div>  <script>
     // Apply background from inline variable
     document.querySelectorAll('section').forEach(sec=>{
       const bg = sec.getAttribute('style').match(/url'([^']+)'/);
@@ -121,5 +124,31 @@
       form.reset();
       setTimeout(()=>{document.getElementById('rsvp-result').textContent='';},2500);
     });
+
+    // Music autoplay with user interaction
+    const music = document.getElementById('bg-music');
+    const control = document.getElementById('music-control');
+    let playing = false;
+
+    function playMusic(){
+      music.play().then(()=>{
+        playing = true;
+        control.textContent = '⏸';
+      }).catch(err=>console.log(err));
+    }
+
+    control.addEventListener('click',()=>{
+      if(playing){
+        music.pause();
+        playing=false;
+        control.textContent='▶';
+      } else {
+        playMusic();
+      }
+    });
+
+    // Autoplay attempt after first user gesture (scroll/click)
+    document.body.addEventListener('click',()=>{if(!playing){playMusic();}},{once:true});
+    document.body.addEventListener('scroll',()=>{if(!playing){playMusic();}},{once:true});
   </script></body>
-                                                                                                                               </html>
+            </html>
