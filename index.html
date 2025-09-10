@@ -6,23 +6,27 @@
   <title>Undangan Pernikahan Anissa & Hamzah</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Background Slideshow */
+    /* Background Slideshow dengan Zoom */
     .slideshow {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
       z-index: -1;
-      animation: slide 20s infinite;
       background-size: cover;
       background-position: center;
+      animation: slideZoom 20s infinite;
     }
-    @keyframes slide {
-      0%, 33% { background-image: url('https://picsum.photos/seed/akad/1600/900'); }
-      34%, 66% { background-image: url('https://picsum.photos/seed/resepsi/1600/900'); }
-      67%, 100% { background-image: url('https://picsum.photos/seed/ngunduh/1600/900'); }
+    @keyframes slideZoom {
+      0%, 33% { background-image: url('https://picsum.photos/seed/akad/1600/900'); transform: scale(1); }
+      34%, 66% { background-image: url('https://picsum.photos/seed/resepsi/1600/900'); transform: scale(1.1); }
+      67%, 100% { background-image: url('https://picsum.photos/seed/ngunduh/1600/900'); transform: scale(1); }
     }
+    /* Modal */
     .modal { display: none; }
     .modal.active { display: flex; }
+    /* Galeri Slideshow */
+    .gallery-slideshow img { display: none; }
+    .gallery-slideshow img.active { display: block; }
   </style>
 </head>
 <body class="font-sans text-gray-800">
@@ -38,7 +42,7 @@
     <button onclick="playMusic()" class="mt-8 px-6 py-3 bg-white text-gray-800 rounded-full shadow hover:bg-gray-200">Buka Undangan</button>
   </section>
 
-  <!-- Acara -->
+  <!-- Jadwal Acara -->
   <section id="acara" class="py-16 px-6 bg-gray-50 relative z-10">
     <h2 class="text-3xl font-bold text-center mb-10">Jadwal Acara</h2>
     <div class="max-w-3xl mx-auto grid gap-6">
@@ -60,16 +64,33 @@
     </div>
   </section>
 
-  <!-- Galeri -->
+  <!-- Cerita Pertemuan -->
+  <section id="story" class="py-16 px-6 relative z-10">
+    <h2 class="text-3xl font-bold text-center mb-10">Cerita Pertemuan</h2>
+    <div class="max-w-3xl mx-auto space-y-6">
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-xl font-semibold">Kenalan</h3>
+        <p>Kami pertama kali berkenalan pada tahun 2019, melalui pertemuan sederhana yang penuh makna.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-xl font-semibold">Tunangan</h3>
+        <p>Pada tahun 2022, kami resmi melangkah lebih jauh dengan mengikat janji dalam sebuah acara tunangan.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-xl font-semibold">Menikah</h3>
+        <p>Dan akhirnya, dengan penuh syukur dan cinta, kami mengikat janji suci pada 31 Desember 2025.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeri Kenangan (Slideshow) -->
   <section id="galeri" class="py-16 px-6 relative z-10">
     <h2 class="text-3xl font-bold text-center mb-10">Galeri Kenangan</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-      <img src="https://picsum.photos/seed/1/400" class="rounded-xl shadow">
-      <img src="https://picsum.photos/seed/2/400" class="rounded-xl shadow">
-      <img src="https://picsum.photos/seed/3/400" class="rounded-xl shadow">
-      <img src="https://picsum.photos/seed/4/400" class="rounded-xl shadow">
-      <img src="https://picsum.photos/seed/5/400" class="rounded-xl shadow">
-      <img src="https://picsum.photos/seed/6/400" class="rounded-xl shadow">
+    <div class="max-w-2xl mx-auto gallery-slideshow rounded-xl overflow-hidden shadow">
+      <img src="https://picsum.photos/seed/1/800/500" class="active w-full rounded-xl">
+      <img src="https://picsum.photos/seed/2/800/500" class="w-full rounded-xl">
+      <img src="https://picsum.photos/seed/3/800/500" class="w-full rounded-xl">
+      <img src="https://picsum.photos/seed/4/800/500" class="w-full rounded-xl">
     </div>
   </section>
 
@@ -133,6 +154,16 @@
     const modal = document.getElementById("rsvpModal");
     function toggleModal(){ modal.classList.toggle("active"); }
     function playMusic(){ document.getElementById("bg-music").play(); }
+
+    // Slideshow Galeri
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".gallery-slideshow img");
+    function showSlides() {
+      slides.forEach((img,i)=> img.classList.remove("active"));
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add("active");
+    }
+    setInterval(showSlides, 3000);
   </script>
 </body>
-</html>
+  </html>
