@@ -81,9 +81,18 @@
    <p class="text-center text-sm sm:text-base font-script italic max-w-md">
     Kepada Yth. Bapak/Ibu/Saudara/i
    </p>
-<button onclick="openInvitation()" class="mt-8 px-6 py-3 bg-white text-gray-800 rounded-full shadow hover:bg-gray-200">
-  Buka Undangan
-</button>
+<script>
+  window.addEventListener("load", () => {
+    const music = document.getElementById("bg-music");
+    music.play().catch(err => {
+      console.log("Autoplay diblokir, musik jalan setelah user interaksi:", err);
+      // kalau gagal, musik akan aktif setelah klik pertama user
+      document.body.addEventListener("click", () => {
+        music.play();
+      }, { once: true });
+    });
+  });
+</script>
  </button>
    </a>
   </header>
