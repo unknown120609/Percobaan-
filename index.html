@@ -1,154 +1,129 @@
 <!doctype html>
-
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>The Wedding of Mila & Redi</title>
+  <meta charset="utf-8">
+  <title>The Wedding Of Mila & Redi</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-    :root{--overlay:rgba(0,0,0,0.55);--accent:#b27b5a;--muted:#f1f1f1}
-    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:#fff}
-    section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;padding:20px}
-    section::before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background-size:cover;background-position:center;z-index:-2}
-    section::after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:var(--overlay);z-index:-1}
-    h1,h2,h3,h4{margin:10px 0}
-    .countdown{display:flex;gap:12px;justify-content:center;margin-top:12px}
-    .countdown .item{background:var(--overlay);padding:12px;border-radius:8px;min-width:70px}
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;width:100%}
-    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:8px}
-    .rsvp input,.rsvp select,.rsvp textarea{width:100%;padding:10px;margin:6px 0;border:0;border-radius:8px}
-    .btn{background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;border:0;cursor:pointer}
-    footer{font-size:13px;color:var(--muted);text-align:center;padding:20px;background:#000}
-    #music-control{position:fixed;bottom:20px;right:20px;z-index:99;background:var(--accent);border-radius:50%;width:50px;height:50px;display:flex;justify-content:center;align-items:center;cursor:pointer;color:#fff;font-size:20px;box-shadow:0 4px 10px rgba(0,0,0,0.3)}
+    body { margin:0; font-family: sans-serif; color:#fff; }
+    .section { min-height:100vh; position:relative; background-size:cover; background-position:center; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
+    .overlay { position:absolute; inset:0; background:rgba(0,0,0,0.5); }
+    .content { position:relative; z-index:1; width:90%; max-width:600px; }
+    .count { display:flex; gap:12px; justify-content:center; margin:16px 0; }
+    .count div { background: rgba(255,255,255,0.2); padding:12px; border-radius:8px; min-width:60px; }
+    form { display:flex; flex-direction:column; gap:8px; }
+    input, select, textarea { width:100%; padding:8px; border:none; border-radius:6px; }
+    button { padding:10px; border:none; border-radius:6px; background:#d7b8ff; color:#000; cursor:pointer; }
+    img.gallery { width:30%; margin:1%; border-radius:6px; }
   </style>
 </head>
-<body>  <!-- Header -->  <section style="--bg:url('https://via.placeholder.com/1200x800?text=Foto+Header')">
-    <h1 style="font-family:'Great Vibes',cursive;font-size:52px">The Wedding Of</h1>
-    <h2>Mila Karmila &amp; Redi Irawan</h2>
-    <p>Jum'at, 19 September 2025 • Akad 14:00 WIB</p>
-    <div class="countdown" id="countdown">
-      <div class="item"><div id="days">--</div><small>Hari</small></div>
-      <div class="item"><div id="hours">--</div><small>Jam</small></div>
-      <div class="item"><div id="minutes">--</div><small>Menit</small></div>
-      <div class="item"><div id="seconds">--</div><small>Detik</small></div>
+<body>
+  <!-- Header -->
+  <section class="section" style="background-image:url('bg-photo1.jpg')">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>The Wedding Of</h1>
+      <h2>Mila Karmila & Redi Irawan</h2>
+      <p>Kepada Yth. Hengki</p>
+      <div class="count" id="countdown">
+        <div><span id="d">00</span><br>Hari</div>
+        <div><span id="h">00</span><br>Jam</div>
+        <div><span id="m">00</span><br>Menit</div>
+        <div><span id="s">00</span><br>Detik</div>
+      </div>
     </div>
-  </section>  <!-- Profil -->  <section style="--bg:url('https://via.placeholder.com/1200x800?text=Foto+Profil')">
-    <h2>Assalamu'alaikum Warahmatullahi Wabarakatuh</h2>
-    <p>Dengan penuh rasa syukur kepada Allah SWT, kami bermaksud menyelenggarakan acara pernikahan putra-putri kami. Dengan kerendahan hati, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu.</p>
-    <h3>Mila Karmila</h3>
-    <p>Putri pertama dari Bpk. &amp; Ibu</p>
-    <h3>&amp;</h3>
-    <h3>Redi Irawan</h3>
-    <p>Putra pertama dari Bpk. &amp; Ibu</p>
-  </section>  <!-- Waktu & Tempat -->  <section style="--bg:url('https://via.placeholder.com/1200x800?text=Foto+Acara')">
-    <h2>Waktu &amp; Tempat</h2>
-    <h3>Akad Nikah</h3>
-    <p>Jum'at, 19 September 2025<br>14:00 WIB<br>Sungai Bengkinang RT.40 RW.10<br>Kel. Karya Jaya, Kec. Kertapati</p>
-    <h3>Resepsi</h3>
-    <p>Minggu, 21 September 2025<br>08:00 WIB s/d selesai<br>Sungai Bengkinang RT.40 RW.10<br>Kel. Karya Jaya, Kec. Kertapati</p>
-  </section>  <!-- Our Story -->  <section style="--bg:url('https://via.placeholder.com/1200x800?text=Foto+Story')">
-    <h2>Our Story</h2>
-    <p><strong>2018</strong> — Awal Pertemuan. Kami pertama kali dipertemukan di masa yang tak pernah kami duga.</p>
-    <p><strong>20 Agustus 2025</strong> — Lamaran. Hari penuh kebahagiaan, ketika dua keluarga besar dipersatukan dalam ikatan suci.</p>
-    <blockquote>“Apa yang menjadi takdirmu akan menemukan jalannya untuk menemukanmu.” — Ali bin Abi Thalib</blockquote>
-  </section>  <!-- Galeri -->  <section style="--bg:url('https://via.placeholder.com/1200x800?text=Foto+Galeri')">
-    <h2>Galeri Foto</h2>
-    <div class="gallery">
-      <img src="https://via.placeholder.com/600x400?text=Foto+1" alt="Foto 1">
-      <img src="https://via.placeholder.com/600x400?text=Foto+2" alt="Foto 2">
-      <img src="https://via.placeholder.com/600x400?text=Foto+3" alt="Foto 3">
-      <img src="https://via.placeholder.com/600x400?text=Foto+4" alt="Foto 4">
+  </section>
+  
+  <!-- Profil -->
+  <section class="section" style="background-image:url('bg-photo2.jpg')">
+    <div class="overlay"></div>
+    <div class="content">
+      <h3>Assalamu’alaikum</h3>
+      <p>Kami mengundang Bapak/Ibu/Saudara/i.</p>
+      <h4>Mila Karmila</h4>
+      <p>Putri pertama dari Bpk. Sudirman & Ibu Yuliati</p>
+      <h4>Redi Irawan</h4>
+      <p>Putra pertama dari Bpk. Wardani & Ibu Dahlena</p>
     </div>
-  </section>  <!-- Tanda Kasih & RSVP -->  <section style="--bg:url('https://via.placeholder.com/1200x800?text=Foto+RSVP')">
-    <h2>Tanda Kasih</h2>
-    <p><strong>BNI</strong> — 1234567890 a.n Mila Karmila<br>
-       <strong>Mandiri</strong> — 9876543210 a.n Redi Irawan</p>
-    <p>Atau kirim kado langsung ke alamat: Sungai Bengkinang RT.40 RW.10, Kel. Karya Jaya, Kec. Kertapati</p>
-    <div class="rsvp" style="max-width:400px;width:100%;margin-top:20px">
-      <h3>Konfirmasi Kehadiran (RSVP)</h3>
-      <form id="rsvp-form">
-        <input type="text" id="name" placeholder="Nama" required>
-        <select id="attend">
-          <option value="hadir">Hadir</option>
-          <option value="ragu">Masih Ragu</option>
-          <option value="tidak">Tidak Bisa Hadir</option>
+  </section>
+  
+  <!-- Acara -->
+  <section class="section" style="background-image:url('bg-photo3.jpg')">
+    <div class="overlay"></div>
+    <div class="content">
+      <h3>Waktu & Tempat</h3>
+      <p><strong>Akad:</strong> 19 Sept 2025, 14:00 WIB</p>
+      <p><strong>Resepsi:</strong> 21 Sept 2025, pagi</p>
+      <p>Sungai Bengkinang RT.40 RW.10, Karya Jaya, Kertapati</p>
+    </div>
+  </section>
+  
+  <!-- Cerita -->
+  <section class="section" style="background-image:url('bg-photo4.jpg')">
+    <div class="overlay"></div>
+    <div class="content">
+      <h3>Our Story</h3>
+      <p>2018 — Pertemuan</p>
+      <p>20 Agustus 2025 — Lamaran</p>
+      <p>“Takdirmu akan menemukanmu…”</p>
+    </div>
+  </section>
+  
+  <!-- Galeri -->
+  <section class="section" style="background-image:url('bg-photo5.jpg')">
+    <div class="overlay"></div>
+    <div class="content">
+      <h3>Galeri Foto</h3>
+      <div>
+        <img class="gallery" src="foto1.jpg">
+        <img class="gallery" src="foto2.jpg">
+        <img class="gallery" src="foto3.jpg">
+      </div>
+    </div>
+  </section>
+  
+  <!-- Hadiah & RSVP -->
+  <section class="section" style="background-image:url('bg-photo6.jpg')">
+    <div class="overlay"></div>
+    <div class="content">
+      <h3>Hadiah</h3>
+      <p>BNI: 833726660 – Mila Karmila</p>
+      <p>Mandiri: 1120020429499 – Redi Irawan</p>
+      <h3>RSVP</h3>
+      <form>
+        <input type="text" placeholder="Nama">
+        <select>
+          <option>Hadir</option>
+          <option>Ragu</option>
+          <option>Tidak Bisa</option>
         </select>
-        <textarea id="message" rows="3" placeholder="Ucapan / pesan"></textarea>
-        <button type="submit" class="btn">Kirim Konfirmasi</button>
-        <div id="rsvp-result" style="margin-top:8px;color:lightgreen;font-weight:600"></div>
+        <textarea placeholder="Ucapan"></textarea>
+        <button>Kirim</button>
       </form>
     </div>
-  </section>  <footer>
-    Terima kasih atas doa dan restunya. — Created by ekowong_Undangan Web
-  </footer>  <!-- Musik --><audio id="bg-music" src="musik.mp3" loop></audio>
+  </section>
+  
+  <!-- Footer -->
+  <section class="section" style="background:#000">
+    <div class="content">
+      <p>Created By ekowong_Undangan Web</p>
+    </div>
+  </section>
 
-  <div id="music-control">▶</div>  <script>
-    // Apply background from inline variable
-    document.querySelectorAll('section').forEach(sec=>{
-      const bg = sec.getAttribute('style').match(/url'([^']+)'/);
-      if(bg){
-        sec.style.setProperty('--bg',`url(${bg[1]})`);
-        sec.style.backgroundImage = `url(${bg[1]})`;
-      }
-    });
-
-    // Countdown target: 19 Sep 2025 14:00 WIB (UTC+7)
-    const target = new Date('2025-09-19T07:00:00Z');
-    function updateCountdown(){
-      const now = new Date();
-      const diff = target - now;
-      if(diff <= 0){return}
-      const days = Math.floor(diff / (1000*60*60*24));
-      const hours = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-      const mins = Math.floor((diff%(1000*60*60))/(1000*60));
-      const secs = Math.floor((diff%(1000*60))/1000);
-      document.getElementById('days').textContent = days;
-      document.getElementById('hours').textContent = hours;
-      document.getElementById('minutes').textContent = mins;
-      document.getElementById('seconds').textContent = secs;
+  <script>
+    const target = new Date('2025-09-19T14:00:00').getTime();
+    function update(){ 
+      const now = Date.now(), diff = target - now;
+      if(diff < 0) return;
+      const d = Math.floor(diff/86400000), h = Math.floor((diff%86400000)/3600000);
+      const m = Math.floor((diff%3600000)/60000), s = Math.floor((diff%60000)/1000);
+      document.getElementById('d').textContent=d.toString().padStart(2,'0');
+      document.getElementById('h').textContent=h.toString().padStart(2,'0');
+      document.getElementById('m').textContent=m.toString().padStart(2,'0');
+      document.getElementById('s').textContent=s.toString().padStart(2,'0');
     }
-    setInterval(updateCountdown,1000);
-    updateCountdown();
-
-    // Simple RSVP storage
-    const form = document.getElementById('rsvp-form');
-    form.addEventListener('submit',function(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const attend = document.getElementById('attend').value;
-      const message = document.getElementById('message').value.trim();
-      const list = JSON.parse(localStorage.getItem('rsvps')||'[]');
-      list.push({name,attend,message,ts:Date.now()});
-      localStorage.setItem('rsvps',JSON.stringify(list));
-      document.getElementById('rsvp-result').textContent = 'Terkirim!';
-      form.reset();
-      setTimeout(()=>{document.getElementById('rsvp-result').textContent='';},2500);
-    });
-
-    // Music autoplay with user interaction
-    const music = document.getElementById('bg-music');
-    const control = document.getElementById('music-control');
-    let playing = false;
-
-    function playMusic(){
-      music.play().then(()=>{
-        playing = true;
-        control.textContent = '⏸';
-      }).catch(err=>console.log(err));
-    }
-
-    control.addEventListener('click',()=>{
-      if(playing){
-        music.pause();
-        playing=false;
-        control.textContent='▶';
-      } else {
-        playMusic();
-      }
-    });
-
-    // Autoplay attempt after first user gesture (scroll/click)
-    document.body.addEventListener('click',()=>{if(!playing){playMusic();}},{once:true});
-    document.body.addEventListener('scroll',()=>{if(!playing){playMusic();}},{once:true});
-  </script></body>
-            </html>
+    setInterval(update, 1000);
+    update();
+  </script>
+</body>
+</html>
