@@ -109,12 +109,7 @@
     <p><span class="font-semibold">Hamzah Yusuf</span>, dari keluarga bapak Hasan.</p>
    </section>
 
-   <!-- Save the Date -->
-   <section class="text-center">
-    <a class="inline-block bg-white text-black font-semibold px-6 py-2 rounded-full hover:bg-gray-200 transition"
-       href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Wedding+of+Anissa+%26+Hamzah&amp;dates=20251231T000000Z/20251231T235959Z&amp;details=Join+us+to+celebrate+the+wedding+of+Anissa+and+Hamzah.&amp;location=Masjid+Agung+Bogor"
-       target="_blank" rel="noopener noreferrer">Ingatkan saya melalui Google Calendar</a>
-   </section>
+   
 
    <!-- Schedule -->
    <section class="space-y-4">
@@ -135,9 +130,19 @@
     <div class="timeline">
      <div class="timeline-item"><p class="font-semibold">31 Januari 2021 — Kenalan</p><p>“Dibawah pohon cemara taman cempaka menjadi saksi kami dipertemukan.”</p></div>
      <div class="timeline-item"><p class="font-semibold">31 Maret 2021 — Tunangan</p><p>“Banyaknya persamaan dan kecocokan memutuskan kami untuk serius.”</p></div>
-     <div class="timeline-item"><p class="font-semibold">21 Desember 2021 — Menikah</p><p>“Hari terindah dalam hidup kami, ikatan pernikahan menjadikan kami semakin erat.”</p></div>
+     <div class="timeline-item"><p class="font-semibold">21 Desember 2021 — Menikah</p><p>“Hari terindah dalam hidup kami, ikatan pernikahan menjadikan kami semakin erat 
+      
+  <!-- Cover / Save The Date -->
+  <main class="cover" id="cover">
+    <div class="cover-inner" data-aos="fade-up">
+      <div class="brand-orn"><img src="ornament.png" alt="" style="width:56px;height:56px;opacity:.95"></div>
+      <div class="save-title">Save The Date</div>
+      <div class="sub">Waktu Dan Tempat</div>
+      <button class="btn-ghost" id="calendarBtn">📅 Atur Pengingat</button>
+     .”</p></div>
     </div>
    </section>
+     
    <!-- Section 2 -->
      <section id="section-2" class="w-full relative flex flex-col md:flex-row-reverse items-center bg-white bg-opacity-80 rounded-xl shadow-lg overflow-hidden mb-16">
       <img src="https://storage.googleapis.com/a1aa/image/9bb23ece-ff4c-4b47-0fdb-18c9dec0d262.jpg"
@@ -246,6 +251,17 @@
        document.body.addEventListener("click", () => { music.play(); }, { once: true });
      });
    });
+
+     // Google Calendar button
+  document.getElementById('calendarBtn').addEventListener('click', ()=>{
+    // Build simple Google Calendar add URL (UTC times derived from local)
+    const start = new Date('2025-09-19T09:00:00');
+    const end = new Date('2025-09-19T11:00:00');
+    function fmt(dt){ return dt.toISOString().replace(/-|:|\.\d+/g,''); }
+    const details = encodeURIComponent('Undangan pernikahan Anissa & Hamzah\nAlamat: Jl. Kusuma Bangsa 05, Rawamangun, Depok');
+    const url = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Pernikahan Anissa & Hamzah')}&dates=${fmt(start)}/${fmt(end)}&details=${details}&location=${encodeURIComponent('Jl. Kusuma Bangsa 05, Rawamangun')}&sf=true&output=xml`;
+    window.open(url,'_blank');
+  });
   </script>
  </body>
 </html>
