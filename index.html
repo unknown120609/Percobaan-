@@ -6,19 +6,6 @@
   <title>
    The Wedding Of Anissa &amp; Hamzah
   </title>
-<!-- META untuk preview di WhatsApp / Sosial Media -->
-<meta property="og:title" content="Undangan Pernikahan Anissa & Hamzah" />
-<meta property="og:description" content="Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara(i) untuk hadir di hari bahagia kami." />
-<meta property="og:image" content="https://domainanda.com/images/undangan.jpg" />
-<meta property="og:url" content="https://unknown120609.github.io/Percobaan-/?#main-content" />
-<meta property="og:type" content="website" />
-
-<!-- META untuk Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Undangan Pernikahan Anissa & Hamzah" />
-<meta name="twitter:description" content="Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara(i) untuk hadir di hari bahagia kami." />
-<meta name="twitter:image" content="https://unknown120609.github.io/Percobaan-/?#main-content" />
-  
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
@@ -108,11 +95,13 @@
    <img alt="Line art" class="w-36 h-36 sm:w-44 sm:h-44" src="https://storage.googleapis.com/a1aa/image/f8e87496-517f-4efa-5780-fb0a7b34e8b2.jpg"/>
     <p><span class="font-semibold">Hamzah Yusuf</span>, dari keluarga bapak Hasan.</p>
    </section>
-<!-- Cover / Save The Date -->
-  <main class="cover" id="cover">
-      <div class="sub">Waktu Dan Tempat</div>
-      <button class="btn-ghost" id="calendarBtn">📅 Atur Pengingat</button>
-   
+
+   <!-- Save the Date -->
+   <section class="text-center">
+    <a class="inline-block bg-white text-black font-semibold px-6 py-2 rounded-full hover:bg-gray-200 transition"
+       href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Wedding+of+Anissa+%26+Hamzah&amp;dates=20251231T000000Z/20251231T235959Z&amp;details=Join+us+to+celebrate+the+wedding+of+Anissa+and+Hamzah.&amp;location=Masjid+Agung+Bogor"
+       target="_blank" rel="noopener noreferrer">Ingatkan saya melalui Google Calendar</a>
+   </section>
 
    <!-- Schedule -->
    <section class="space-y-4">
@@ -133,9 +122,9 @@
     <div class="timeline">
      <div class="timeline-item"><p class="font-semibold">31 Januari 2021 — Kenalan</p><p>“Dibawah pohon cemara taman cempaka menjadi saksi kami dipertemukan.”</p></div>
      <div class="timeline-item"><p class="font-semibold">31 Maret 2021 — Tunangan</p><p>“Banyaknya persamaan dan kecocokan memutuskan kami untuk serius.”</p></div>
-     <div class="timeline-item"><p class="font-semibold">21 Desember 2021 — Menikah</p><p>“Hari terindah dalam hidup kami, ikatan pernikahan menjadikan kami semakin erat 
-      
-     
+     <div class="timeline-item"><p class="font-semibold">21 Desember 2021 — Menikah</p><p>“Hari terindah dalam hidup kami, ikatan pernikahan menjadikan kami semakin erat.”</p></div>
+    </div>
+   </section>
    <!-- Section 2 -->
      <section id="section-2" class="w-full relative flex flex-col md:flex-row-reverse items-center bg-white bg-opacity-80 rounded-xl shadow-lg overflow-hidden mb-16">
       <img src="https://storage.googleapis.com/a1aa/image/9bb23ece-ff4c-4b47-0fdb-18c9dec0d262.jpg"
@@ -244,17 +233,6 @@
        document.body.addEventListener("click", () => { music.play(); }, { once: true });
      });
    });
-
-     // Google Calendar button
-  document.getElementById('calendarBtn').addEventListener('click', ()=>{
-    // Build simple Google Calendar add URL (UTC times derived from local)
-    const start = new Date('2025-09-19T09:00:00');
-    const end = new Date('2025-09-19T11:00:00');
-    function fmt(dt){ return dt.toISOString().replace(/-|:|\.\d+/g,''); }
-    const details = encodeURIComponent('Undangan pernikahan Anissa & Hamzah\nAlamat: Jl. Kusuma Bangsa 05, Rawamangun, Depok');
-    const url = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Pernikahan Anissa & Hamzah')}&dates=${fmt(start)}/${fmt(end)}&details=${details}&location=${encodeURIComponent('Jl. Kusuma Bangsa 05, Rawamangun')}&sf=true&output=xml`;
-    window.open(url,'_blank');
-  });
   </script>
  </body>
 </html>
