@@ -6,11 +6,30 @@
     <title>Mila & Redi - Undangan Pernikahan</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 
+    <div class="opening-overlay" id="opening-overlay">
+        <div class="opening-content">
+            <p>The Wedding Of</p>
+            <h1>Mila & Redi</h1>
+            <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+            <p class="guest-name">Tamu Undangan</p> <button id="open-invitation">Buka Undangan</button>
+        </div>
+    </div>
+
+    <div class="music-control" id="music-control">
+        <img src="https://www.linkacara.com/template/front/new-engagement/assets/img/icon/music.png" alt="Music Icon">
+    </div>
+
+    <audio id="background-music" loop>
+        <source src="audio/music.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
     <header class="hero">
-        <div class="hero-content">
+        <div class="hero-content" data-aos="fade-in" data-aos-duration="1500">
             <h1>Mila Karmila & Redi Irawan</h1>
             <p>Assalamualaikum Wr. Wb.</p>
             <p>Dengan penuh bahagia, kami mengundang Bapak / Ibu / Saudara / i untuk hadir dalam acara pernikahan kami.</p>
@@ -19,14 +38,22 @@
     </header>
 
     <main>
-        <section id="save-the-date" class="card">
+        <section id="save-the-date" class="card" data-aos="fade-up">
             <h2>Save The Date</h2>
+            
+            <div id="countdown-timer">
+                <div class="time-box"><span id="days">00</span> Hari</div>
+                <div class="time-box"><span id="hours">00</span> Jam</div>
+                <div class="time-box"><span id="minutes">00</span> Menit</div>
+                <div class="time-box"><span id="seconds">00</span> Detik</div>
+            </div>
+
             <p class="date">🗓 Jumat, 19 September 2025</p>
             <p class="location">📍 Sungai Bengkinang RT.40 RW.10, Kel. Karya Jaya, Kec. Kertapati</p>
             <p>Mohon simpan tanggal ini di hatimu — kehadiranmu sangat kami nantikan.</p>
         </section>
 
-        <section id="details" class="card">
+        <section id="details" class="card" data-aos="fade-up">
             <h2>Waktu & Tempat</h2>
             <div class="event">
                 <h3>Akad Nikah</h3>
@@ -42,33 +69,24 @@
             </div>
         </section>
 
-        <section id="our-story" class="card">
+        <section id="our-story" class="card" data-aos="fade-up">
             <h2>Cerita Kami</h2>
             <ul class="timeline">
-                <li>
-                    <strong>2018</strong>
-                    <p>Pertemuan kami yang takdirkan di tempat kerja yang sama. Tak ada yang kebetulan, semua telah diatur-Nya.</p>
-                </li>
-                <li>
-                    <strong>20 Agustus 2025</strong>
-                    <p>Saat hati kami dilamar di hadapan orang tua, dalam doa dan restu.</p>
-                </li>
-                <li>
-                    <strong>Saat Ini</strong>
-                    <p>Kini, kami akan menyatukan ikatan dalam akad dan resepsi, berharap kasih dan restu dari semua sahabat serta keluarga.</p>
-                </li>
+                <li><strong>2018</strong><p>Pertemuan kami...</p></li>
+                <li><strong>20 Agustus 2025</strong><p>Saat hati kami dilamar...</p></li>
+                <li><strong>Saat Ini</strong><p>Kini, kami akan menyatukan ikatan...</p></li>
             </ul>
         </section>
 
-        <section id="hopes" class="card">
-             <h2>Harapan Pengantin</h2>
-             <p>Dengan penuh suka cita, kami mengharapkan kehadiran dan doa restu dari Bapak / Ibu / Saudara / i dalam hari bahagia kami.</p>
-             <p>Terima kasih atas segala dukungan dan kasih sayang yang telah diberikan.</p>
+        <section id="hopes" class="card" data-aos="fade-up">
+            <h2>Harapan Pengantin</h2>
+             <p>Dengan penuh suka cita...</p>
+             <p>Terima kasih atas segala dukungan...</p>
         </section>
 
-        <section id="gallery" class="card">
+        <section id="gallery" class="card" data-aos="fade-up">
             <h2>Galeri & Kenangan</h2>
-            <p>Kumpulan gambar momen-momen spesial kami — hadirkan senyum dan kebahagiaan dalam tiap jepretan.</p>
+            <p>Kumpulan gambar momen-momen spesial kami...</p>
             <div class="gallery-grid">
                 <img src="https://via.placeholder.com/400x400" alt="Kenangan 1">
                 <img src="https://via.placeholder.com/400x400" alt="Kenangan 2">
@@ -77,27 +95,10 @@
             </div>
         </section>
 
-        <section id="rsvp" class="card">
+        <section id="rsvp" class="card" data-aos="fade-up">
             <h2>Pesan & Konfirmasi Kehadiran</h2>
             <form id="rsvp-form">
-                <div class="form-group">
-                    <label for="name">Nama:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label>Konfirmasi Kehadiran:</label>
-                    <div class="radio-group">
-                        <label><input type="radio" name="attendance" value="hadir" required> ✅ Saya berencana hadir</label>
-                        <label><input type="radio" name="attendance" value="ragu"> 🔆 Saya masih ragu</label>
-                        <label><input type="radio" name="attendance" value="tidak"> ❌ Mohon maaf, saya tidak bisa hadir</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="message">Pesan untuk pengantin:</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
-                </div>
-                <button type="submit">Kirim Pesan</button>
-            </form>
+                </form>
         </section>
     </main>
 
@@ -105,6 +106,7 @@
         <p>Made with ❤️ for Mila & Redi</p>
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
-  </html>
+                                  </html>
