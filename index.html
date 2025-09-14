@@ -252,8 +252,7 @@
      gallerySlides[galleryIndex].classList.add('opacity-100');
    }, 5000);
 
-   
-  // music controls
+    // music controls
   const music = document.getElementById('bgMusic');
   const musicBtn = document.getElementById('musicBtn');
   // try to autoplay when user interacts (some browsers block autoplay)
@@ -264,7 +263,6 @@
   musicBtn.addEventListener('click', ()=>{
     if(music.paused){ music.play(); musicBtn.textContent='▮▮'; } else { music.pause(); musicBtn.textContent='♪'; }
   });
-   });
   </script>
  </body>
 </html>
