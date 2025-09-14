@@ -1,0 +1,196 @@
+/* Pengaturan Dasar dan Font */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f1eb; /* Warna latar belakang krem lembut */
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #5D4037; /* Coklat tua untuk judul */
+}
+
+/* Bagian Hero (Pembuka) */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1200x800'); /* Ganti dengan URL foto pre-wedding */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.hero .quote {
+    font-style: italic;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+/* Style untuk setiap kartu/section */
+.card {
+    background: white;
+    margin: 30px auto;
+    padding: 40px 20px;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.date {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #A1887F; /* Coklat muda */
+}
+
+.location {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+/* Detail Acara */
+.event {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.event:first-child {
+    border-top: none;
+}
+
+/* Cerita Kami (Timeline) */
+.timeline {
+    list-style: none;
+    padding: 0;
+    position: relative;
+    text-align: left;
+}
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 2px;
+    background: #A1887F;
+}
+.timeline li {
+    padding-left: 50px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.timeline li:before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #5D4037;
+    border: 2px solid white;
+}
+
+/* Galeri Foto */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Form RSVP */
+#rsvp-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.radio-group label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    background-color: #5D4037;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #4E342E;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #5D4037;
+    color: white;
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .card h2 {
+        font-size: 2rem;
+    }
+  }
