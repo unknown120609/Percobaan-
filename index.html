@@ -224,9 +224,10 @@
    <a class="inline-block bg-white text-black font-semibold px-6 py-2 rounded-full hover:bg-gray-200 transition" href="#">Cek katalog kita</a>
    <p class="text-xs font-script">Created💌 bayandika39@gmail.com ❤ Full Of Love</p>
   </footer>
-
-  <!-- Musik -->
-  <audio id="bg-music" autoplay loop>
+ 
+  <!-- audio (place musik.mp3 di folder yang sama) -->
+  <audio id="bgMusic" loop preload="auto">
+    <!-- GANTI sumber musik sesuai file / url -->
     <source src="musik.mp3" type="audio/mpeg">
   </audio>
 
@@ -251,13 +252,18 @@
      gallerySlides[galleryIndex].classList.add('opacity-100');
    }, 5000);
 
-   // Musik autoplay handling
-   window.addEventListener("load", () => {
-     const music = document.getElementById("bg-music");
-     music.play().catch(err => {
-       console.log("Autoplay diblokir, musik akan jalan setelah klik:", err);
-       document.body.addEventListener("click", () => { music.play(); }, { once: true });
-     });
+   
+  // music controls
+  const music = document.getElementById('bgMusic');
+  const musicBtn = document.getElementById('musicBtn');
+  // try to autoplay when user interacts (some browsers block autoplay)
+  document.addEventListener('click', function PlayMusic(){
+    if(music.paused){ music.play().catch(()=>{}); musicBtn.textContent='♪'; }
+    document.removeEventListener('click', PlayMusic);
+  });
+  musicBtn.addEventListener('click', ()=>{
+    if(music.paused){ music.play(); musicBtn.textContent='▮▮'; } else { music.pause(); musicBtn.textContent='♪'; }
+  });
    });
   </script>
  </body>
