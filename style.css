@@ -3,7 +3,7 @@
 /* Style untuk Latar Belakang */
 body {
     /* Ganti background-color dengan background-image */
-    background-image: url('images/background.jpg');
+    background-image: url('images.jpg');
     background-attachment: fixed; /* Membuat background tetap saat scroll */
     background-size: cover;
     background-position: center;
