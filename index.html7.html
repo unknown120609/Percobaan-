@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   The Wedding Of Anissa &amp; Hamzah
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   .font-script {
+      font-family: "Great Vibes", cursive;
+    }
+    /* Ken Burns zoom animation */
+    @keyframes kenburns {
+      0% { transform: scale(1) translate(0, 0); }
+      50% { transform: scale(1.1) translate(-5%, -5%); }
+      100% { transform: scale(1) translate(0, 0); }
+    }
+    .kenburns {
+      animation: kenburns 20s ease-in-out infinite;
+      transform-origin: center center;
+    }
+    /* Timeline styles */
+    .timeline {
+      position: relative;
+      padding-left: 2.5rem;
+      border-left: 3px solid #e5e7eb;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -11px;
+      top: 0.25rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: #fbbf24;
+      border-radius: 9999px;
+      border: 3px solid black;
+      box-sizing: content-box;
+    }
+  </style>
+ </head>
+ <body class="bg-black text-white min-h-screen flex flex-col relative overflow-x-hidden">
+  <!-- Background slideshow container -->
+  <div aria-hidden="true" class="fixed inset-0 -z-10 overflow-hidden">
+   <div class="absolute inset-0 w-full h-full">
+    <img alt="Wedding photo 1" class="kenburns absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" id="bg-slide-0" style="opacity:1" src="https://storage.googleapis.com/a1aa/image/108544e9-a215-4e4f-bf48-ae4d873618ae.jpg"/>
+    <img alt="Wedding photo 2" class="kenburns absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" id="bg-slide-1" src="https://storage.googleapis.com/a1aa/image/57240d7b-f929-4b4c-7fe5-1186480b53fb.jpg"/>
+    <img alt="Wedding photo 3" class="kenburns absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" id="bg-slide-2" src="https://storage.googleapis.com/a1aa/image/f8e87496-517f-4efa-5780-fb0a7b34e8b2.jpg"/>
+   </div>
+   <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="relative z-10 px-6 pt-8 pb-6 flex flex-col items-center space-y-4">
+   <h1 class="text-center font-script text-white text-3xl sm:text-4xl">The Wedding Of</h1>
+   <h2 class="text-center font-extrabold text-4xl sm:text-5xl leading-tight">Anissa <p>&amp;</p>Hamzah</h2>
+   <img alt="Line art" class="w-36 h-36 sm:w-44 sm:h-44" src="https://storage.googleapis.com/a1aa/image/f8e87496-517f-4efa-5780-fb0a7b34e8b2.jpg"/>
+   <p class="text-center text-sm sm:text-base font-script italic max-w-md">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+   <a class="bg-white text-black font-semibold px-6 py-2 rounded-full hover:bg-gray-200 transition" href="#main-content">Buka Undangan</a>
+  </header>
+
+  <!-- Main Content -->
+  <main class="relative z-10 flex-grow px-6 max-w-3xl mx-auto space-y-10" id="main-content">
+   <!-- Date & Countdown -->
+   <section class="space-y-2">
+    <p class="text-right font-semibold text-lg">Rabu, <span class="italic">31 Desember 2025</span></p>
+    <div class="text-right">
+     <p class="font-semibold mb-1">Countdown</p>
+     <div class="inline-flex space-x-1 text-center text-xs font-semibold">
+      <div class="bg-gray-800 px-3 py-1 flex flex-col"><span>0</span><span class="text-[10px]">Hari</span></div>
+      <div class="bg-gray-800 px-3 py-1 flex flex-col"><span>0</span><span class="text-[10px]">Jam</span></div>
+      <div class="bg-gray-800 px-3 py-1 flex flex-col"><span>0</span><span class="text-[10px]">Menit</span></div>
+      <div class="bg-gray-800 px-3 py-1 flex flex-col"><span>0</span><span class="text-[10px]">Detik</span></div>
+     </div>
+    </div>
+   </section>
+
+   <!-- Greeting -->
+   <section class="space-y-4 text-center">
+    <div class="timeline">
+    <p class="font-script text-lg">Assalamualaikum Wr Wb. Dengan segala kerendahan hati, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri pernikahan kami.</p>
+  <img alt="Line art" class="w-36 h-36 sm:w-44 sm:h-44" src="https://storage.googleapis.com/a1aa/image/f8e87496-517f-4efa-5780-fb0a7b34e8b2.jpg"/>
+    <div class="timeline"><p><span class="font-semibold">Anissa Maryam</span>, dari keluarga bapak Abdul.</p>
+   <img alt="Line art" class="w-36 h-36 sm:w-44 sm:h-44" src="https://storage.googleapis.com/a1aa/image/f8e87496-517f-4efa-5780-fb0a7b34e8b2.jpg"/>
+    <p><span class="font-semibold">Hamzah Yusuf</span>, dari keluarga bapak Hasan.</p>
+   </section>
+
+   <!-- Save the Date -->
+   <section class="text-center">
+    <a class="inline-block bg-white text-black font-semibold px-6 py-2 rounded-full hover:bg-gray-200 transition"
+       href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Wedding+of+Anissa+%26+Hamzah&amp;dates=20251231T000000Z/20251231T235959Z&amp;details=Join+us+to+celebrate+the+wedding+of+Anissa+and+Hamzah.&amp;location=Masjid+Agung+Bogor"
+       target="_blank" rel="noopener noreferrer">Ingatkan saya melalui Google Calendar</a>
+   </section>
+
+   <!-- Schedule -->
+   <section class="space-y-4">
+    <h3 class="font-semibold text-xl">Jadwal Acara</h3>
+    <ul class="list-disc list-inside space-y-2">
+     <li><span class="font-semibold">Akad Nikah:</span> 12 Desember 2021, pukul 08:00 WIB, di Masjid Agung Bogor.</li>
+     <li><span class="font-semibold">Resepsi:</span> 12 Desember 2024, pukul 10:00 WIB, di Jl. Kusuma Bangsa 05, Rawamangun, Depok.</li>
+     <li><span class="font-semibold">Ngunduh Mantu:</span> 15 Desember 2021, pukul 08:00 WIB, di alamat yang sama.</li>
+    </ul>
+   </section>
+
+   <!-- Notes -->
+   <section><p><span class="font-semibold">Catatan Penting:</span> Dress code Batik. Mohon selalu menjaga protokol kesehatan.</p></section>
+
+   <!-- Our Story -->
+   <section class="space-y-6">
+    <h3 class="font-semibold text-xl">Our Story</h3>
+    <div class="timeline">
+     <div class="timeline-item"><p class="font-semibold">31 Januari 2021 — Kenalan</p><p>“Dibawah pohon cemara taman cempaka menjadi saksi kami dipertemukan.”</p></div>
+     <div class="timeline-item"><p class="font-semibold">31 Maret 2021 — Tunangan</p><p>“Banyaknya persamaan dan kecocokan memutuskan kami untuk serius.”</p></div>
+     <div class="timeline-item"><p class="font-semibold">21 Desember 2021 — Menikah</p><p>“Hari terindah dalam hidup kami, ikatan pernikahan menjadikan kami semakin erat.”</p></div>
+    </div>
+   </section>
+   <!-- Section 2 -->
+     <section id="section-2" class="w-full relative flex flex-col md:flex-row-reverse items-center bg-white bg-opacity-80 rounded-xl shadow-lg overflow-hidden mb-16">
+      <img src="https://storage.googleapis.com/a1aa/image/9bb23ece-ff4c-4b47-0fdb-18c9dec0d262.jpg"
+        class="w-full md:w-1/2 object-cover" width="600" height="800"/>
+      <div class="p-8 md:w-1/2 text-center md:text-left">
+        <h2 class="font-script text-4xl text-pink-600 mb-4">harapan pengantin pria.</h2>
+        <p class="text-gray-700 text-lg mb-4">"Semoga pernikahan ini menjadi awal perjalanan indah menuju keluarga sakinah, mawaddah, warahmah."</p>
+        <ul class="text-gray-600 list-disc list-inside mb-4">
+      </div>
+    </section>
+   <!-- Section 3 -->
+    <section id="section-2" class="w-full relative flex flex-col md:flex-row-reverse items-center bg-white bg-opacity-80 rounded-xl shadow-lg overflow-hidden mb-16">
+      <img src="https://storage.googleapis.com/a1aa/image/9bb23ece-ff4c-4b47-0fdb-18c9dec0d262.jpg"
+        class="w-full md:w-1/2 object-cover" width="600" height="800"/>
+      <div class="p-8 md:w-1/2 text-center md:text-left">
+        <h2 class="font-script text-4xl text-pink-600 mb-4">harapan pengantin wanita.</h2>
+        <p class="text-gray-700 text-lg mb-4">Semoga pernikahan ini membawa kebahagiaan, keberkahan, dan kekuatan untuk saling menjaga seumur hidup.</p>
+        <ul class="text-gray-600 list-disc list-inside mb-4">
+      </div>
+    </section>
+
+   <!-- Gallery -->
+   <section>
+    <h3 class="font-semibold text-xl">Galeri &amp; Video</h3>
+    <div class="relative w-full h-48 rounded overflow-hidden bg-gray-900">
+     <img id="gallery-slide-0" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" src="https://storage.googleapis.com/a1aa/image/387594c9-f5e4-45c7-2718-24c74b2e2753.jpg"/>
+     <img id="gallery-slide-1" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" src="https://storage.googleapis.com/a1aa/image/57240d7b-f929-4b4c-7fe5-1186480b53fb.jpg"/>
+     <img id="gallery-slide-2" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" src="https://storage.googleapis.com/a1aa/image/0e89c903-645a-40b8-f871-044cc3b53261.jpg"/>
+    </div>
+    <div class="mt-2">
+     <p class="font-semibold mb-1">Our Video Story</p>
+     <video class="w-full rounded" controls src="https://placehold.co/video.mp4"></video>
+    </div>
+   </section>
+
+   <!-- RSVP -->
+   <section class="space-y-4">
+    <h3 class="font-semibold text-xl">Kirim Pesan &amp; Konfirmasi Kehadiran</h3>
+    <form class="space-y-4">
+     <input class="w-full rounded px-3 py-2 text-black" placeholder="Nama Anda" required>
+     <select class="w-full rounded px-3 py-2 text-black" required>
+      <option value="">Pilih status</option>
+      <option>Saya berencana hadir</option>
+      <option>Saya masih ragu</option>
+      <option>Maaf saya tidak bisa hadir</option>
+     </select>
+     <textarea class="w-full rounded px-3 py-2 text-black" placeholder="Tulis pesan Anda" rows="3"></textarea>
+     <button class="bg-white text-black font-semibold px-6 py-2 rounded-full hover:bg-gray-200 transition">Kirim</button>
+    </form>
+   </section>
+
+   <!-- Gifts -->
+   <section class="space-y-6">
+    <h3 class="font-semibold text-xl">Info Hadiah &amp; Alamat</h3>
+    <ul class="list-disc list-inside space-y-1">
+     <li>BNI: 1234567890 a.n. Anissa Maryam</li>
+     <li>BRI: 0987654321 a.n. Hamzah Yusuf</li>
+     <li>Mandiri: 1122334455 a.n. Anissa Maryam</li>
+     <li>OVO: 081234567890 a.n. Anissa Maryam</li>
+     <li>DANA: 081234567891 a.n. Hamzah Yusuf</li>
+     <li>GoPay: 081234567892 a.n. Hamzah Yusuf</li>
+    </ul>
+    <p>Alamat pengiriman: Isi alamatmu</p>
+   </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-center py-8 px-6 space-y-4 mt-10 relative z-10">
+   <p>Atas kehadirannya kami ucapkan, Terimakasih. Hormat Kami, Anissa &amp; Hamzah</p>
+  <p>created bayandika39@gmail.com</p>
+   <a class="inline-block bg-white text-black font-semibold px-6 py-2 rounded-full hover:bg-gray-200 transition" href="#">Cek katalog kita</a>
+   <p class="text-xs font-script">Created bayandika39@gmail.com ❤ Full Of Love</p>
+  </footer>
+
+  <!-- Musik -->
+  <audio id="bg-music" autoplay loop>
+    <source src="musik.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+   // Background slideshow
+   const bgSlides = [document.getElementById('bg-slide-0'), document.getElementById('bg-slide-1'), document.getElementById('bg-slide-2')];
+   let bgIndex = 0;
+   setInterval(() => {
+     bgSlides[bgIndex].style.opacity = 0;
+     bgIndex = (bgIndex + 1) % bgSlides.length;
+     bgSlides[bgIndex].style.opacity = 1;
+   }, 10000);
+
+   // Gallery slideshow
+   const gallerySlides = [document.getElementById('gallery-slide-0'), document.getElementById('gallery-slide-1'), document.getElementById('gallery-slide-2')];
+   let galleryIndex = 0;
+   setInterval(() => {
+     gallerySlides[galleryIndex].classList.remove('opacity-100'); 
+     gallerySlides[galleryIndex].classList.add('opacity-0');
+     galleryIndex = (galleryIndex + 1) % gallerySlides.length;
+     gallerySlides[galleryIndex].classList.remove('opacity-0'); 
+     gallerySlides[galleryIndex].classList.add('opacity-100');
+   }, 5000);
+
+   // Musik autoplay handling
+   window.addEventListener("load", () => {
+     const music = document.getElementById("bg-music");
+     music.play().catch(err => {
+       console.log("Autoplay diblokir, musik akan jalan setelah klik:", err);
+       document.body.addEventListener("click", () => { music.play(); }, { once: true });
+     });
+   });
+  </script>
+ </body>
+</html>
