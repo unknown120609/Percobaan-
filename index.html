@@ -68,6 +68,14 @@
       border: 3px solid black;
       box-sizing: content-box;
     }
+   /* Animasi rotasi untuk ikon musik */
+.spin {
+  animation: spin 4s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
   </style>
  </head>
  <body class="bg-black text-white min-h-screen flex flex-col relative overflow-x-hidden">
@@ -233,9 +241,15 @@
  
   <!-- audio (place musik.mp3 di folder yang sama) -->
   <audio id="bgMusic" loop preload="auto">
-    <!-- GANTI sumber musik sesuai file / url -->
     <source src="musik.mp3" type="audio/mpeg">
   </audio>
+
+  <!-- Tombol musik floating -->
+  <div class="right-actions">
+    <button id="musicBtn" class="action-btn">
+      <i id="musicIcon" class="fas fa-music"></i>
+    </button>
+  </div>
 
   <script>
    // Background slideshow
@@ -258,17 +272,30 @@
      gallerySlides[galleryIndex].classList.add('opacity-100');
    }, 5000);
 
-    // music controls
-  const music = document.getElementById('bgMusic');
-  const musicBtn = document.getElementById('musicBtn');
-  // try to autoplay when user interacts (some browsers block autoplay)
-  document.addEventListener('click', function PlayMusic(){
-    if(music.paused){ music.play().catch(()=>{}); musicBtn.textContent='♪'; }
-    document.removeEventListener('click', PlayMusic);
-  });
-  musicBtn.addEventListener('click', ()=>{
-    if(music.paused){ music.play(); musicBtn.textContent='▮▮'; } else { music.pause(); musicBtn.textContent='♪'; }
-  });
+    // Music Controls
+   const music = document.getElementById('bgMusic');
+   const musicBtn = document.getElementById('musicBtn');
+   const musicIcon = document.getElementById('musicIcon');
+
+   // Autoplay saat user pertama kali klik
+   document.addEventListener('click', function PlayMusic(){
+     if(music.paused){
+       music.play().catch(()=>{});
+       musicIcon.classList.add('spin'); // mulai berputar
+     }
+     document.removeEventListener('click', PlayMusic);
+   });
+
+   // Toggle tombol musik
+   musicBtn.addEventListener('click', ()=>{
+     if(music.paused){
+       music.play();
+       musicIcon.classList.add('spin');
+     } else {
+       music.pause();
+       musicIcon.classList.remove('spin');
+     }
+   });
   </script>
  </body>
 </html>
